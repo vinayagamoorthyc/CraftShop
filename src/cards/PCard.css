@@ -1,12 +1,15 @@
 .pcard{
     border: 1.5px solid #00000012;
     min-width: 302px;
+    max-width: 302px;
     overflow: none;
     border-radius: 2px;
 }
 
 #pcard_contnet{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     padding: 12px;
+    align-items: center;
 }

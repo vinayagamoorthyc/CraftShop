@@ -9,8 +9,8 @@ export default function PCard(props) {
             <img src={img} alt="" />
         </div>
         <div id='pcard_contnet'>
-            <div className='font' >name</div>
-            <div>rate</div>
+            <div className='font' style={{fontSize:"15px"}} >Candles</div>
+            <div style={{color:"orange",fontSize:"14px"}}>21 item</div>
         </div>
     </div>
   )

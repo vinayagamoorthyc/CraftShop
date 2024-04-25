@@ -23,9 +23,6 @@ export default function Popular() {
                 <PCard/>
                 <PCard/>
                 <PCard/>
-                <PCard/>
-                <PCard/>
-                <PCard/>
             </div>
         </div>
     </center>
