@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=League+Spartan:wght@100..900&family=Sen:wght@400..800&display=swap');
+
+
+#root{
+    font-family: "Sen", sans-serif;
+}
