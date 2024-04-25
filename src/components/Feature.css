@@ -1,0 +1,22 @@
+.feature_flex{
+    width: 85%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.feature_content{
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+.f_content_padding{
+    padding: 30px;
+    border-top: 1.5px solid #00000012;
+    border-right: 1.5px solid #00000012;
+}

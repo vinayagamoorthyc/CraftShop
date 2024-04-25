@@ -7,7 +7,7 @@ export default function NavBar() {
 
   return (
     <div>
-         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBlurred={true} className='navbar' >
+         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} isBlurred={true} className='navbar' >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
