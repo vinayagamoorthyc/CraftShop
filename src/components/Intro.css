@@ -1,0 +1,15 @@
+.intro_flex{
+    width: 85%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: start;
+    gap: 30px;
+    background-color: #f1eae3;
+}
+
+.intro_content{
+    display: flex;
+    flex-direction: column;
+}
