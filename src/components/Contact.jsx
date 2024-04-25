@@ -15,7 +15,7 @@ export default function Contact() {
             </div>
             <div className='contact_content'>
                 <div style={{fontSize:"15px",color:"orange"}}>Join The Craft Newsletter</div>
-                <div style={{fontSize:"14px"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in architecto magni aspernatur maxime atque aut perferendis saepe neque nam! Repudiandae delectus perferendis fuga optio labore, ullam praesentium possimus ducimus?</div>
+                <div style={{fontSize:"14px",color:"gray"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis in architecto magni aspernatur maxime atque aut perferendis saepe neque nam! Repudiandae delectus perferendis fuga optio labore, ullam praesentium possimus ducimus?</div>
                 <div>
                     <input type="text" name="" id="newsemail" style={{border:"1.5px solid #00000012",padding:"10px",width:"400px"}} placeholder='Your email address'/>
                 </div>

@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Recent from './components/Recent';
 import Offers from './components/Offers';
 import About from './components/About';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Contact/>
         <Recent/>
         <About/>
+        <Footer/>
     </div>
   )
 }

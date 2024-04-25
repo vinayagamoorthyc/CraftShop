@@ -20,7 +20,7 @@ export default function About() {
                 <img src={img} alt="" width={600}/>
             </div>
         </div>
-        <hr style={{width:"85%",border:"1px solid #00000012",marginBottom:"70px"}}/>
+        <hr style={{width:"85%",border:"1px solid #00000012",marginBottom:"60px"}}/>
     </center>
   )
 }
