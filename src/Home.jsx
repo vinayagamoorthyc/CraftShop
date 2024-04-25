@@ -5,6 +5,7 @@ import Feature from './components/Feature';
 import Popular from './components/Popular';
 import Contact from './components/Contact';
 import Recent from './components/Recent';
+import Offers from './components/Offers';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <NavBar/>
         <Intro/>
         <Feature/>
+        <Offers/>
         <Popular/>
         <Contact/>
         <Recent/>

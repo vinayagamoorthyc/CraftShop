@@ -1,7 +1,7 @@
 .feature_flex{
     width: 85%;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    margin-top: 80px;
+    margin-bottom: 90px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
