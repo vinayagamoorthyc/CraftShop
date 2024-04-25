@@ -1,0 +1,13 @@
+.recent_flex{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.r_pro_flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}

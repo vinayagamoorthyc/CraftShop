@@ -4,6 +4,7 @@ import Intro from './components/intro';
 import Feature from './components/Feature';
 import Popular from './components/Popular';
 import Contact from './components/Contact';
+import Recent from './components/Recent';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Feature/>
         <Popular/>
         <Contact/>
+        <Recent/>
     </div>
   )
 }

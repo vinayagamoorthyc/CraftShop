@@ -1,0 +1,21 @@
+.rcard{
+    min-width: 295px;
+    max-width: 295px;
+    overflow: none;
+    border-radius: 2px;
+    transition: 1s padding;
+}
+.rcard_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    border: 1.5px solid #00000012;
+}
+
+.rcard:hover{
+    border: 1px solid orange;
+    padding: 10px;
+    border-radius: 10px;
+}
