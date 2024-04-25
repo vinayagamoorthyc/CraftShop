@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import {NextUIProvider} from "@nextui-org/react";
+
 
 function App() {
   return (
-    <div className="">
+    <NextUIProvider>
       <Routes>
-        <Route />
+        <Route path='/' element={<Home/>} />
       </Routes>
-    </div>
+    </NextUIProvider>
   );
 }
 
