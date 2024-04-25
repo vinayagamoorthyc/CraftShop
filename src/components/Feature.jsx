@@ -5,7 +5,8 @@ export default function Feature() {
   return (
     <center>
         <div className="feature_flex">
-            <div style={{fontSize:"25px",fontWeight:"bolder",textAlign:"start"}} className='font'>
+        <hr style={{border:"1px solid black",minWidth:"125px"}}/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style={{fontSize:"20px",fontWeight:"bolder",textAlign:"start",width:"450px"}} className='font'>
                 Our Amazing Feature
             </div>
             <div className='feature_content'>

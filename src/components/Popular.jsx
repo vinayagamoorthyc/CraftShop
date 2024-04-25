@@ -8,6 +8,7 @@ export default function Popular() {
         <div className='popular_flex'>
             <div className='p_head_flex'>
                 <div className='font' style={{fontSize:"33px",fontWeight:"bold"}}>Popular Categories</div>
+                <hr style={{border:"1.5px solid #",minWidth:"800px"}}/>
                 <div className='p_head_arrows'>
                     <button ><i class="bi bi-arrow-left"></i></button>
                     <button 
