@@ -27,8 +27,8 @@ export default function NavBar() {
         </NavbarItem>
         
         <NavbarItem>
-          <Link color="foreground" href="#">
-          &nbsp;Shop &nbsp;&nbsp;&nbsp;|
+          <Link color="foreground" href="/shoppage">
+          &nbsp;Shop All &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
         <NavbarItem>
