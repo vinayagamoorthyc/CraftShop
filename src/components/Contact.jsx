@@ -21,7 +21,7 @@ export default function Contact() {
                 </div>
                 <div>
                     <button className='shop_btn'>
-                        SUBSCRIBE &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
+                        Subscribe &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                     </button>
                 </div>
             </div>

@@ -50,7 +50,7 @@ export default function NavBar() {
         </NavbarItem>
 
         <NavbarItem className="hidden lg:flex">
-          <Link href="#" color='warning'>Login</Link>
+          <Link href="/login" color='warning'>Login</Link>
         </NavbarItem>
 
         <NavbarItem>

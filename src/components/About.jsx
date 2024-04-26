@@ -12,7 +12,7 @@ export default function About() {
                 <div style={{fontSize:"15px",color:"gray"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur modi error incidunt quos! Doloribus necessitatibus eligendi voluptatum quia vitae accusamus impedit blanditiis.</div>
                 <div>
                     <button className='shop_btn'>
-                    EXPLORE MORE &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
+                    Discover More &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                     </button>
                 </div>
             </div>
