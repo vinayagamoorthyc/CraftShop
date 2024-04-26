@@ -54,7 +54,7 @@ export default function NavBar() {
         </NavbarItem>
 
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
+          <Button as={Link} color="warning" href="/signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>

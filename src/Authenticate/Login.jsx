@@ -9,8 +9,11 @@ export default function Login() {
         <div className="login_flex">
             
             <div className='login_content'>
-                <div><img src={logo} width={125} alt="" style={{position:"absolute",top:"-90px"}}/></div>
-                <div className='font' style={{fontSize:"27px",color:"gray"}}>Welcome back</div>
+                <div style={{display:"flex",gap:"60px",flexDirection:'column',alignItems:"start"}}>
+                    <div><img src={logo} width={125} alt="" /></div>
+                    <div className='font' style={{fontSize:"27px",color:"gray"}}>Welcome back</div>
+                </div>
+                
                 <div style={{color:"black",fontSize:"14px"}}>Please enter your details</div>
                 <div><input type="text" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}}/></div>
                 <div><input type="text" name="" id="" placeholder='Enter your password' className='shop_btn' style={{width:"300px"}}/></div>
@@ -19,7 +22,7 @@ export default function Login() {
                         Sign In &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                     </button>
                 </div>
-                <a href="">Already have an account?</a>
+                <a href="/signup">Don't have an account!</a>
                 <div style={{display:'flex',alignItems:"center",fontSize:'14px'}}>
                     <hr style={{border:"1px solid #00000012",minWidth:"45px"}}/> &nbsp;
                     OR&nbsp;

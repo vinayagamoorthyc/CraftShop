@@ -10,7 +10,6 @@
 .login_content{
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
     align-items: start;
-    position: relative;
 }
