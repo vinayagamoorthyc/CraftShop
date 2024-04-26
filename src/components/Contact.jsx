@@ -4,7 +4,7 @@ import img from '../assets/contact.png';
 
 export default function Contact() {
   return (
-    <center>
+    <center id=''>
         <div className='contact_flex'>
             <div>
                 <img src={img} alt="" />

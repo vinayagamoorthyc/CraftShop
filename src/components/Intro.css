@@ -4,7 +4,7 @@
     width: 85%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: start;
     gap: 30px;

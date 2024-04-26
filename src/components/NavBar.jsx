@@ -8,7 +8,7 @@ export default function NavBar() {
 
   return (
     <div>
-         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll isBlurred={true} className='navbar'>
+         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -32,12 +32,12 @@ export default function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-          &nbsp;Elements &nbsp;&nbsp;&nbsp;|
+          <Link color="foreground" href="#about">
+          &nbsp;About Us &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="#contact">
           &nbsp;Contact
           </Link>
         </NavbarItem>

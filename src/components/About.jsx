@@ -4,7 +4,7 @@ import img from "../assets/about.png";
 
 export default function About() {
   return (
-    <center>
+    <center id='about'>
         <div className="about_flex">
             <div className='about_content'>
                 <div style={{color:"orange",fontSize:"17px"}}>About Handmade Shop</div>

@@ -9,7 +9,7 @@ export default function Intro() {
     <center>
     <div className='intro_flex'>
         <div style={{padding:"35px"}}>
-            <img src={img1} alt="" width={980}/>
+            <img src={img1} alt="" width={1080}/>
         </div>
         <div className='intro_content'>
             <div style={{color:"orange"}}>New Collection</div>
@@ -22,7 +22,7 @@ export default function Intro() {
             </div>
         </div>
         <div>
-            <img src={img2} alt="" width={1050}/>
+            <img src={img2} alt="" width={1250}/>
         </div>
     </div>
     </center>

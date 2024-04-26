@@ -8,5 +8,8 @@
 
 #root{
     font-family: "Barlow", sans-serif;
+}
+
+*{
     scroll-behavior: smooth;
 }
