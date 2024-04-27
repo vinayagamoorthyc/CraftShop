@@ -21,7 +21,7 @@ export default function SignUp() {
                           Sign Up &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                       </button>
                   </div>
-                  <a href="/login">Already have an account?</a>
+                  <a href="/login" style={{color:"orange"}}>Already have an account?</a>
                   <div style={{display:'flex',alignItems:"center",fontSize:'14px'}}>
                       <hr style={{border:"1px solid #00000012",minWidth:"45px"}}/> &nbsp;
                       OR&nbsp;

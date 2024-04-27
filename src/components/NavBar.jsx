@@ -9,7 +9,7 @@ export default function NavBar() {
 
   return (
     <div>
-         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll>
+         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} maxWidth='xl'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -64,12 +64,11 @@ export default function NavBar() {
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar
-              isBordered
               as="button"
               className="transition-transform"
               color="warning"
               name=""
-              size="sm"
+              size="md"
               src={profile}
             />
           </DropdownTrigger>
@@ -103,7 +102,7 @@ export default function NavBar() {
         isOpen={isOpen} 
         onOpenChange={onOpenChange}
         placement="top-center"
-        backdrop='blur'
+        backdrop='opaque'
         size='sm'
       >
         <ModalContent>
