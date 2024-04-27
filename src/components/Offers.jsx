@@ -2,8 +2,10 @@ import React from 'react';
 import "./Offers.css";
 import img1 from "../assets/offerimg1.png";
 import img2 from "../assets/offerimg2.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Offers() {
+    const navigate = useNavigate();
   return (
     <center>
         <div className="offers_flex">
@@ -16,7 +18,7 @@ export default function Offers() {
                     <div className='font' style={{fontSize:"21px"}}>Get Extra 25% Off</div>
                     <div>This Weekend Only</div>
                     <div>
-                        <button className='shop_btn'>
+                        <button className='shop_btn' onClick={()=>navigate("/shoppage")}>
                             Shop Now &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                         </button>
                     </div>
@@ -30,7 +32,7 @@ export default function Offers() {
                     <div style={{color:"orange"}}>Craft's Day Offer</div>
                     <div className='font' style={{fontSize:"21px"}}>Exclusive Handmade Gifts For You</div>
                     <div>
-                        <button className='shop_btn'>
+                        <button className='shop_btn' onClick={()=>navigate("/shoppage")}>
                             Shop Now &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
                         </button>
                     </div>

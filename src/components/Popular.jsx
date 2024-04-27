@@ -1,6 +1,10 @@
 import React from 'react';
 import './Popular.css';
 import PCard from '../cards/PCard';
+import garden from '../assets/garden.png';
+import kitchen from '../assets/kitchen.png';
+import candlees from '../assets/candles.png';
+import homewares from '../assets/homewares.png';
 
 export default function Popular() {
   return (
@@ -19,11 +23,10 @@ export default function Popular() {
                 </div>
             </div>
             <div className='p_pros_flex'>
-                <PCard/>
-                <PCard/>
-                <PCard/>
-                <PCard/>
-                <PCard/>
+                <PCard img={garden} name={"01. Garden"} items={"12 item"}/>
+                <PCard img={kitchen} name={"02. Kitchen"} items={"18 item"}/>
+                <PCard img={candlees} name={"03. Candles"} items={"15 item"}/>
+                <PCard img={homewares} name={"04. Homewares"} items={"21 item"}/>
             </div>
         </div>
         <div id='subscribe'></div>
