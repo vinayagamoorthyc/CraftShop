@@ -1,0 +1,27 @@
+.pro_flex{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pro_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 1.5px solid #00000012;
+    padding: 55px 100px 90px 100px;
+    position: absolute;
+    left: 50%;
+}
+
+.pro_image{
+    margin-left: 10%;
+}
+
+.show_rating{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

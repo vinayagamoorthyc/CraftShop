@@ -26,7 +26,7 @@ export default function Popular() {
                 <PCard/>
             </div>
         </div>
-        <div id='contact'></div>
+        <div id='subscribe'></div>
     </center>
   )
 }

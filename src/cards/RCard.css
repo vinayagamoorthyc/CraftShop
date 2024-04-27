@@ -3,7 +3,8 @@
     max-width: 295px;
     overflow: none;
     border-radius: 2px;
-    transition: 1s padding;
+    transition: 1s padding ;
+    position: relative;
 }
 .rcard_content{
     display: flex;
@@ -12,10 +13,22 @@
     padding: 20px;
     align-items: center;
     border: 1.5px solid #00000012;
+    gap: 2px;
 }
 
-.rcard:hover{
+.rcard:hover  {
     border: 1px solid orange;
     padding: 10px;
     border-radius: 10px;
+}
+.rcard:hover .addcart_btn  {
+    opacity: 5;
+}
+
+
+.addcart_btn{
+    opacity: 0;  
+    position: absolute;
+    bottom: 110px; 
+    transition: opacity 1s ease;
 }

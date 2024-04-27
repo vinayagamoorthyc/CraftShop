@@ -1,0 +1,12 @@
+.filter_btn{
+    border: 1px solid black;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    transition: 0.5s color ease, 0.5s border ease;
+}
+
+.filter_btn:hover{
+    color: orange;
+    border: 1px solid orange;
+}

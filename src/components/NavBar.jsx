@@ -21,7 +21,7 @@ export default function NavBar() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/">
             Home &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
@@ -37,8 +37,8 @@ export default function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#contact">
-          &nbsp;Contact
+          <Link color="foreground" href="#subscribe">
+          &nbsp; Contact
           </Link>
         </NavbarItem>
                 
@@ -73,11 +73,12 @@ export default function NavBar() {
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
+            <DropdownItem className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">demo@gmail.com</p>
+              <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
             </DropdownItem>
-            <DropdownItem key="my_profile" color='warning'>My Profile</DropdownItem>
+            <DropdownItem key="profile" color='warning'>My Profile</DropdownItem>
+            <DropdownItem key="edit">Profile Changes</DropdownItem>
             <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
