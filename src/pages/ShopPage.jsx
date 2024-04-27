@@ -2,6 +2,7 @@ import React from 'react';
 import './ShopPage.css';
 import RCard from '../cards/RCard';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer.jsx';
 
 export default function ShopPage() {
   return (
@@ -37,6 +38,8 @@ export default function ShopPage() {
                 <RCard/>
             </div>
         </div>
+        <hr style={{width:"85%",border:"1px solid #00000012",marginBottom:"60px"}}/>
+        <Footer/>
     </center>
   )
 }

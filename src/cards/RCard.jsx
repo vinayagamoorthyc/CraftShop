@@ -7,12 +7,17 @@ export default function RCard() {
 
   const navigate=useNavigate();
 
+  function like(){
+    
+  }
+
   return (
     <div className='rcard' >
         <div onClick={()=>navigate('/productpage')}>
-            <img src={img} alt="" />
+            <img src={img} alt=""/>
         </div>
         <div className='rcard_content'>
+          <div className='like_icon' onClick={()=>like()}><i class="bi bi-heart" ></i></div>
           <button className='addcart_btn' onClick={()=>navigate('')}
           style={{
             border:"1.5px solid #00000012",padding:"7px 20px 7px 20px",borderRadius:"7px",fontSize:"13.5px",color:"gray",width:"90%"

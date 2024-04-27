@@ -1,8 +1,9 @@
 import React from 'react';
 import './ProductPage.css';
 import NavBar from '../components/NavBar.jsx';
-import img from '../assets/rpro.png';
+import img from '../assets/preview.png';
 import { Tab, Tabs } from '@nextui-org/react';
+import Footer from '../components/Footer.jsx';
 
 export default function ProductPage() {
     
@@ -11,9 +12,9 @@ export default function ProductPage() {
         <NavBar/><br />
         <hr />
         <div className="pro_flex">
-            <img src={img} alt="" className='pro_image' width={450}/>
+            <img src={img} alt="" className='pro_image' width={450} style={{borderRadius:"7px"}}/>
             <div className='pro_content'>
-                <div className='font' style={{fontSize:"30px"}}>Fantastic Iron Clock</div>
+                <div className='font' style={{fontSize:"30px"}}>Beautiful Flower Pot</div>
                 <div style={{color:"orange",fontSize:'20px'}}>986.00</div>
                 <div className='show_rating'>
                     <div class="mt-0 text-[gray] text-x tracking-[3px]">
@@ -52,6 +53,8 @@ export default function ProductPage() {
             </div>
         </div>
         <hr />
+        <hr style={{width:"85%",border:"0px solid #00000012",marginBottom:"50px"}}/>
+        <Footer/>
     </div>
   )
 }

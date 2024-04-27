@@ -1,10 +1,11 @@
 import React from 'react';
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Modal, useDisclosure, ModalContent, ModalFooter, ModalBody, ModalHeader} from "@nextui-org/react";
 import logo from '../assets/logo.png';
 import profile from '../assets/profile.jpg'
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   return (
     <div>
@@ -36,10 +37,10 @@ export default function NavBar() {
           &nbsp;About Us &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#subscribe">
-          &nbsp; Contact
-          </Link>
+        <NavbarItem >
+          <button onClick={()=>onOpen()}>
+           Contact
+          </button>
         </NavbarItem>
                 
       </NavbarContent>
@@ -95,6 +96,56 @@ export default function NavBar() {
 
       </NavbarMenu>
     </Navbar>
+
+    {/* ----------------- contact modal ---------------------- */}
+
+    <Modal 
+        isOpen={isOpen} 
+        onOpenChange={onOpenChange}
+        placement="top-center"
+        backdrop='blur'
+        size='sm'
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1 font" 
+              style={{fontSize:"21px"}}>Contact Us</ModalHeader>
+              <ModalBody>
+                  <div>
+                    <input type="text" name="" id="newsemail" 
+                    style={{border:"1.5px solid #00000012",padding:"10px",width:"100%"}} placeholder='Leave your message here'/>
+                  </div>
+                  <div>
+                    <p className='shop_btn' style={{fontSize:"15px",color:"gray",border:"1px solid gray"}}>
+                        Using Email &nbsp;&nbsp;
+                        <label 
+                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"center"}} class="">
+                          " handcrafts112@gmail.com "
+                        </label>
+                    </p>
+                  </div>
+                  <div style={{display:'flex',alignItems:"center",fontSize:'14px',color:"gray"}}>
+                    <hr style={{border:"1px solid #00000012",minWidth:"155px"}}/> &nbsp;
+                    OR&nbsp;
+                    <hr style={{border:"1px solid #00000012",minWidth:"150px"}}/>
+                  </div>
+                  <div style={{display:"flex",gap:"50px",justifyContent:"center",fontSize:"20px",color:"gray"}}>
+                      <i className='bi bi-instagram'></i>
+                      <i className='bi bi-linkedin'></i>
+                      <i className='bi bi-github'></i>
+                      <i className='bi bi-browser-chrome'></i>
+                  </div>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="warning" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   )
 }
