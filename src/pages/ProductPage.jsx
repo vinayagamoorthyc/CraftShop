@@ -15,7 +15,7 @@ export default function ProductPage() {
             <img src={img} alt="" className='pro_image' width={450} style={{borderRadius:"7px"}}/>
             <div className='pro_content'>
                 <div className='font' style={{fontSize:"30px"}}>Beautiful Flower Pot</div>
-                <div style={{color:"orange",fontSize:'20px'}}>986.00</div>
+                <div style={{color:"orange",fontSize:'20px'}}>₹ 986.00</div>
                 <div className='show_rating'>
                     <div class="mt-0 text-[gray] text-x tracking-[3px]">
                     ★★★★★ 
