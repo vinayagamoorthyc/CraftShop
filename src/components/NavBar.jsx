@@ -33,7 +33,7 @@ export default function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#about">
+          <Link color="foreground" href="/aboutpage">
           &nbsp;About Us &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
