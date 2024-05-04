@@ -9,7 +9,7 @@ export default function ProductPage() {
     
   return (
     <div>
-        <NavBar/><br />
+        <NavBar/><hr /><br />
         <hr />
         <div className="pro_flex">
             <img src={img} alt="" className='pro_image' width={450} style={{borderRadius:"7px"}}/>
