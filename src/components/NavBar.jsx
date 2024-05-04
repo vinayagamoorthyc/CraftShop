@@ -78,7 +78,7 @@ export default function NavBar() {
               <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
             </DropdownItem>
             <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
-            <DropdownItem key="edit">Profile Changes</DropdownItem>
+            <DropdownItem key="edit">Liked Items</DropdownItem>
             <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
