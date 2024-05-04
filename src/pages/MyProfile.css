@@ -1,0 +1,40 @@
+.profile_flex{
+    width: 65%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile_img_box{
+    display: flex;
+    text-align: start;
+    gap: 30px;
+    border: 1.5px solid #00000012;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.profile_content_box{
+    border: 1.5px solid #00000012;
+    padding: 25px;
+    border-radius: 12px;
+    width: 47%;
+    text-align: start;
+}
+
+.profile_content_flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 55px;
+    justify-content: flex-start;
+    align-items: start;
+}

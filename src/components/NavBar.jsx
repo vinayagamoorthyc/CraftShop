@@ -77,7 +77,7 @@ export default function NavBar() {
               <p className="font-semibold">Signed in as</p>
               <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
             </DropdownItem>
-            <DropdownItem key="profile" color='warning'>My Profile</DropdownItem>
+            <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
             <DropdownItem key="edit">Profile Changes</DropdownItem>
             <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
@@ -96,7 +96,7 @@ export default function NavBar() {
       </NavbarMenu>
     </Navbar>
 
-    {/* ----------------- contact modal ---------------------- */}
+    {/* ------------------------------------------------- contact modal ---------------------------------------- */}
 
     <Modal 
         isOpen={isOpen} 

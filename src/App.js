@@ -7,6 +7,7 @@ import SignUp from './Authenticate/SignUp';
 import ShopPage from './pages/ShopPage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
+import MyProfile from './pages/MyProfile';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/shoppage' element={<ShopPage/>} />
         <Route path='/productpage' element={<ProductPage/>} />
         <Route path='/aboutpage' element={<AboutPage/>} />
+        <Route path='/profilepage' element={<MyProfile/>} />
       </Routes>
     </NextUIProvider>
   );
