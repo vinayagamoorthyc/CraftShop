@@ -1,6 +1,7 @@
 .profile_flex{
     width: 65%;
     margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -26,7 +27,7 @@
     border: 1.5px solid #00000012;
     padding: 25px;
     border-radius: 12px;
-    width: 47%;
+    width: 48%;
     text-align: start;
 }
 

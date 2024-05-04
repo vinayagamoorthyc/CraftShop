@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import './MyProfile.css';
 import { Avatar } from '@nextui-org/react';
 import img from '../assets/profile.jpg';
+import Footer from '../components/Footer';
 
 export default function MyProfile() {
   return (
@@ -18,7 +19,11 @@ export default function MyProfile() {
               <div style={{color:"gray",fontSize:"15px"}}>Coimbatore,Tamil Nadu</div>
               <div style={{color:"gray",fontSize:"15px"}}>Member</div>
             </div>
-
+            <button className='shop_btn' style={{
+              color:"gray",borderColor:"#00000027",position:"absolute",top:"20px",right:"20px",fontSize:"13px",padding:"5px"
+              }}>
+              &nbsp;Edit&nbsp;&nbsp; <i class="bi bi-pencil-square"></i>&nbsp;
+            </button>
           </div>
           <div className='profile_box'>
             <div className='profile_content_box'>
@@ -69,6 +74,8 @@ export default function MyProfile() {
             </div>
           </div>
         </div>
+        <hr style={{width:"85%",border:"1px solid #00000012",marginBottom:"60px"}}/>
+        <Footer/>
     </center>
   )
 }
