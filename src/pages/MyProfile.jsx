@@ -20,7 +20,7 @@ export default function MyProfile() {
               <div style={{color:"gray",fontSize:"15px"}}>Member</div>
             </div>
             <button className='shop_btn' style={{
-              color:"gray",borderColor:"#00000027",position:"absolute",top:"20px",right:"20px",fontSize:"13px",padding:"5px"
+              color:"gray",borderColor:"#00000027",position:"absolute",top:"20px",right:"20px",fontSize:"13px",padding:"5px",borderRadius:"3px"
               }}>
               &nbsp;Edit&nbsp;&nbsp; <i class="bi bi-pencil-square"></i>&nbsp;
             </button>

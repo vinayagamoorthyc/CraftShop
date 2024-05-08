@@ -1,14 +1,17 @@
 import React from 'react';
 import "./Footer.css";
 import logo from "../assets/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
+    const navigate = useNavigate();
+ console.log(window.location)
   return (
     <center>
         <div className='footer_flex'>
             <div className='footer_content'>
                 <div style={{display:"flex",flexDirection:"column",alignItems:"start",gap:"5px"}}>
-                    <img src={logo} alt="" width={120} />
+                    <img src={logo} alt="" width={120} onClick={()=>navigate("/aboutpage")} />
                     <div style={{fontSize:"15px",color:"gray"}}>Add. 168/170, Avanue 01, Coimbatore, Tamil Nadu</div>
                     <div style={{fontSize:"15px",color:"gray"}}>handcrafted5487@gmail.com</div>
                     <div style={{display:"flex",gap:"25px"}}>

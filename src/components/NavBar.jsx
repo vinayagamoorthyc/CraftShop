@@ -2,10 +2,12 @@ import React from 'react';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Modal, useDisclosure, ModalContent, ModalFooter, ModalBody, ModalHeader} from "@nextui-org/react";
 import logo from '../assets/logo.png';
 import profile from '../assets/profile.jpg'
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const navigate = useNavigate();
 
   return (
     <div>
@@ -15,7 +17,7 @@ export default function NavBar() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <NavbarBrand onClick={()=>navigate("/aboutpage")}>
           <img src={logo} alt="CRAFT" width={110} />
         </NavbarBrand>
       </NavbarContent>
@@ -79,7 +81,7 @@ export default function NavBar() {
             </DropdownItem>
             <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
             <DropdownItem key="edit">Liked Items</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+            <DropdownItem key="help_and_feedback" onClick={()=>onOpen()}>Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
             </DropdownItem>
@@ -145,9 +147,9 @@ export default function NavBar() {
           )}
         </ModalContent>
       </Modal>
+    
     </div>
   )
 }
 
-{/* ------------------------------------------------- contact modal ---------------------------------------- */}
 
