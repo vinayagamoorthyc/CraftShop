@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import "./Recent.css";
 import RCard from '../cards/RCard';
 
