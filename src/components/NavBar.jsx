@@ -48,7 +48,7 @@ export default function NavBar() {
       </NavbarContent>
       <NavbarContent justify="end">
 
-      <NavbarItem>
+      <NavbarItem onClick={()=>navigate("/cartpage")}>
         <i style={{fontSize:'22px'}} class="bi bi-bag"></i>2
         </NavbarItem>
 

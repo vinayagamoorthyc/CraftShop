@@ -1,15 +1,14 @@
 import React from 'react';
-import "./RCard.css";
 import img from "../assets/rpro.png";
 import { useNavigate } from 'react-router-dom';
 
-export default function RCard() {
+export default function CCard() {
 
-  const navigate=useNavigate();
+    const navigate=useNavigate();
 
-  function like(){
+    function like(){
     
-  }
+    }
 
   return (
     <div className='rcard' >
@@ -22,7 +21,8 @@ export default function RCard() {
           style={{
             border:"1.5px solid #00000012",padding:"7px 20px 7px 20px",borderRadius:"7px",fontSize:"13.5px",color:"gray",width:"90%"
             }}>
-            ADD TO CART</button>
+            REMOVE FROM CART
+            </button>
           <div onClick={()=>navigate('/productpage')}>Fantastic Iron Clock</div>
           <div onClick={()=>navigate('/productpage')} style={{color:"orange"}}>986.00</div>
         </div>

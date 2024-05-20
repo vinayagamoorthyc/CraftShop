@@ -9,6 +9,7 @@ import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import MyProfile from './pages/MyProfile';
 import LikePage from './pages/LikePage';
+import CartPage from './pages/CartPage';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/aboutpage' element={<AboutPage/>} />
         <Route path='/profilepage' element={<MyProfile/>} />
         <Route path='/likepage' element={<LikePage/>} />
+        <Route path='/cartpage' element={<CartPage/>} />
       </Routes>
     </NextUIProvider>
   );
