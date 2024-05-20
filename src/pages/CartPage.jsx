@@ -3,6 +3,9 @@ import CCard from '../cards/CCard.jsx';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer.jsx';
 import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/react';
+import img1 from "../assets/payment assets/gpay.png";
+import img2 from "../assets/payment assets/paytm.png";
+import img3 from "../assets/payment assets/phonepe.png";
 
 export default function CartPage() {
 
@@ -56,7 +59,7 @@ export default function CartPage() {
                     <p className='shop_btn' style={{fontSize:"15px",color:"gray",border:"1px solid gray"}}>
                         Address &nbsp;&nbsp;
                         <label 
-                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"center"}} class="">
+                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"end"}} class="">
                           Coimbatore, India
                         </label>
                     </p>
@@ -65,8 +68,8 @@ export default function CartPage() {
                     <p className='shop_btn' style={{fontSize:"15px",color:"gray",border:"1px solid gray"}}>
                         Sub Total &nbsp;&nbsp;
                         <label 
-                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"center"}} class="">
-                          Coimbatore, India
+                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"end"}} class="">
+                        ₹ 1349
                         </label>
                     </p>
                   </div>
@@ -74,8 +77,8 @@ export default function CartPage() {
                     <p className='shop_btn' style={{fontSize:"15px",color:"gray",border:"1px solid gray"}}>
                         Delivery Fees &nbsp;&nbsp;
                         <label 
-                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"center"}} class="">
-                          Coimbatore, India
+                          style={{borderLeft:"1px solid gray",padding:"13px 0px 13px 10px",textAlign:"end"}} class="">
+                          Free
                         </label>
                     </p>
                   </div>
@@ -83,14 +86,14 @@ export default function CartPage() {
                     Total: ₹ 1349
                   </div>
                   <div style={{display:'flex',alignItems:"center",fontSize:'14px',color:"gray"}}>
-                    <hr style={{border:"1px solid #00000012",minWidth:"135px"}}/> &nbsp;
+                    <hr style={{border:"1px solid #00000012",minWidth:"120px"}}/> &nbsp;
                     Pay Using&nbsp;
-                    <hr style={{border:"1px solid #00000012",minWidth:"110px"}}/>
+                    <hr style={{border:"1px solid #00000012",minWidth:"140px"}}/>
                   </div>
                   <div style={{display:"flex",gap:"50px",justifyContent:"center",fontSize:"20px",color:"gray"}}>
-                      <img src="" alt="" />
-                      <img src="" alt="" />
-                      <img src="" alt="" />
+                      <img src={img1} alt="" width={70}/>
+                      <img src={img2} alt="" width={70}/>
+                      <img src={img3} alt="" width={90}/>
                   </div>
               </ModalBody>
               <ModalFooter>
