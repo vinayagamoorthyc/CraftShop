@@ -80,7 +80,7 @@ export default function NavBar() {
               <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
             </DropdownItem>
             <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
-            <DropdownItem key="edit">Liked Items</DropdownItem>
+            <DropdownItem key="edit" href='/likepage'>Liked Items</DropdownItem>
             <DropdownItem key="help_and_feedback" onClick={()=>onOpen()}>Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
