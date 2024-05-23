@@ -2,8 +2,13 @@ import React from 'react'
 
 export default function AdminHome() {
   return (
-    <div>
-        
-    </div>
+    <center>
+        <div>
+
+        </div>
+        <div>
+            
+        </div>
+    </center>
   )
 }
