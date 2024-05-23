@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import "./AdminHome.css"
 
 export default function AdminHome() {
-  const [proname,setProname] = useState()
+  const [proname,setProname] = useState();
 
   return (
     <center className='admin_main_flex'>
