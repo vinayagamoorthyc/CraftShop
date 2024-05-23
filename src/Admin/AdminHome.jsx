@@ -1,5 +1,5 @@
 import React from 'react';
-import 
+import "./AdminHome.css";
 
 export default function AdminHome() {
   return (
