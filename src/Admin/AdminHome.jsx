@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./AdminHome.css";
 
 export default function AdminHome() {
+  const [proname,setProname] = useState();
+
   return (
     <center className='admin_main_flex'>
         <div>
             <form action="#" className='admin_add_pro'>
                 <div className='font'>Add Product</div>
-                <input className='shop_btn' type="text" placeholder='Product Name'/>
+                <input className='shop_btn' type="text" placeholder='Product Name' />
                 <input className='shop_btn' type="number" placeholder='Product Price' />
                 <input className='shop_btn' type="text" placeholder='Product Description'/>
                 <input className='shop_btn' type="text" placeholder='Product Maker Details'/>
