@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./AdminHome.css";
+import "./AdminHome.css"
 
 export default function AdminHome() {
   const [proname,setProname] = useState();
