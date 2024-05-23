@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import "./AdminHome.css"
 
 export default function AdminHome() {
