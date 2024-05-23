@@ -17,7 +17,7 @@ export default function NavBar() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand onClick={()=>navigate("/aboutpage")}>
+        <NavbarBrand onClick={()=>navigate("/adminhome")}>
           <img src={logo} alt="CRAFT" width={110} />
         </NavbarBrand>
       </NavbarContent>
