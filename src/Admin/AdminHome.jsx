@@ -3,10 +3,10 @@ import "./AdminHome.css";
 
 export default function AdminHome() {
   return (
-    <center>
+    <center className='admin_main_flex'>
         <div>
-          <div className='font'>Add Product</div>
             <form action="#" className='admin_add_pro'>
+                <div className='font'>Add Product</div>
                 <input className='shop_btn' type="text" placeholder='Product Name'/>
                 <input className='shop_btn' type="number" placeholder='Product Price' />
                 <input className='shop_btn' type="text" placeholder='Product Description'/>
@@ -18,7 +18,7 @@ export default function AdminHome() {
             </form>
         </div>
         <div>
-            <img src="" alt="" />
+            <img src="https://www.firstpalette.com/images/craft-mainpic-large/accordionpaperflowers-main.jpg" alt="" width={500} />
         </div>
     </center>
   )

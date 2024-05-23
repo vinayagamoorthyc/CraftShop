@@ -1,4 +1,13 @@
 .admin_add_pro{
     display: flex;
+    flex-direction: column;
     gap: 10px;
+}
+
+.admin_main_flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
