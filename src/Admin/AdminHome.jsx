@@ -15,7 +15,9 @@ export default function AdminHome() {
   const [category2,setCategory2] = useState();
 
   function addProduct(){
-    axios.post("http://localhost:3001/createProduct",)
+    axios.post("http://localhost:3001/createProduct",{proname,prorate,desc,maker,category,category2,imgurl})
+    .then(()=>alert("ok"))
+    .catch(err=>console.log(err));
   }
 
   return (
@@ -36,7 +38,7 @@ export default function AdminHome() {
           <div>
               <form action="#" className='admin_add_pro' onSubmit={addProduct}>
                   <input className='shop_btn' type="text" placeholder='Product Name'
-                  onChange={(e)=>setProname(e)} />
+                  onChange={(e)=>setProname(e)}/>
                   <input className='shop_btn' type="number" placeholder='Product Price'
                   onChange={(e)=>setProrate(e)} />
                   <input className='shop_btn' type="text" placeholder='Product Description'
