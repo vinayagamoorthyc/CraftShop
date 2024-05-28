@@ -3,6 +3,7 @@ import "./AdminHome.css"
 import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
 import ShowTable from './admin components/ShowTable';
+import axios from "axios";
 
 export default function AdminHome() {
   const [proname,setProname] = useState();
@@ -14,7 +15,7 @@ export default function AdminHome() {
   const [category2,setCategory2] = useState();
 
   function addProduct(){
-    fetch("")
+    axios.post("htt")
   }
 
   return (
