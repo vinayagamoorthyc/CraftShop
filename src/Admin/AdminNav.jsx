@@ -2,7 +2,6 @@ import React from 'react';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'
-import profile from '../assets/profile.jpg';
 
 export default function AdminNav() {
 
