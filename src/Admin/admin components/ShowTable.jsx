@@ -14,7 +14,7 @@ export default function ShowTable() {
 
       // If no cursor is available, then we're loading the first page.
       // Otherwise, the cursor is the next URL to load, as returned from the previous page.
-      const res = await fetch(cursor || "https://swapi.py4e.com/api/people/?search=", {signal});
+      const res = await fetch(cursor || "", {signal});
       let json = await res.json();
 
       if (!cursor) {
@@ -32,6 +32,7 @@ export default function ShowTable() {
 
   return (
     <Table
+        style={{width:"85%"}}
       isHeaderSticky
       aria-label="Example table with client side sorting"
       bottomContent={
@@ -50,7 +51,7 @@ export default function ShowTable() {
       }}
     >
       <TableHeader>
-        <TableColumn key="name">Name</TableColumn>
+        <TableColumn key="name">Product Name</TableColumn>
         <TableColumn key="height">Height</TableColumn>
         <TableColumn key="mass">Mass</TableColumn>
         <TableColumn key="birth_year">Birth year</TableColumn>

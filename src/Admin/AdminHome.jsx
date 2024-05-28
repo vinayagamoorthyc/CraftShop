@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import "./AdminHome.css"
-import AdminNav from './AdminNav';
+import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
+import ShowTable from './admin components/ShowTable';
 
 export default function AdminHome() {
   const [proname,setProname] = useState();
+  const [prorate,setProrate] = useState();
+  const [desc,setDesc] = useState();
+  const [maker,setMaker] = useState();
+  const [category,setCategory] = useState();
+  const [imgurl,setImgurl] = useState();
+  const [category2,setCategory2] = useState();
+
 
   return (
     <center className='admin_home_flex'>
       <AdminNav/>
       <hr />
       <div className='p_head_flex' style={{width:"85%",marginTop:"25px",marginBottom:"15px"}}>
-                <div className='font' style={{fontSize:"33px"}}>Product Inventory</div>
-                <hr style={{border:"1.5px solid #",minWidth:"540px"}}/>
+         <div className='font' style={{fontSize:"33px"}}>Product Inventory</div>
+                <hr style={{border:"1.5px solid #",minWidth:"820px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
                     <div><button className='filter_btn'>
-                        Garden</button></div>
-                    <div><button className='filter_btn'>
-                        Kitchen</button></div>
-                    <div><button className='filter_btn' >
-                        Candles</button></div>
-                    <div><button className='filter_btn'>
-                        Homewares</button></div>
+                        Inventory List</button>
+                    </div>
                 </div>
         </div>
         
@@ -42,22 +45,19 @@ export default function AdminHome() {
               <img src={img} alt="" width={370} />
           </div>
         </div>
-        <hr style={{marginTop:"25px"}}/>
+        <hr style={{marginTop:"35px"}}/>
 
         <div className='p_head_flex' style={{width:"85%",marginTop:"25px",marginBottom:"15px"}}>
-                <div className='font' style={{fontSize:"33px"}}>Product Inventory</div>
-                <hr style={{border:"1.5px solid #",minWidth:"540px"}}/>
+                <div className='font' style={{fontSize:"33px"}}>Inventory List</div>
+                <hr style={{border:"1.5px solid #",minWidth:"900px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
                     <div><button className='filter_btn'>
-                        Garden</button></div>
-                    <div><button className='filter_btn'>
-                        Kitchen</button></div>
-                    <div><button className='filter_btn' >
-                        Candles</button></div>
-                    <div><button className='filter_btn'>
-                        Homewares</button></div>
+                        Add Product</button>
+                    </div>
                 </div>
         </div>
+
+        <ShowTable/>
 
     </center>
   )
