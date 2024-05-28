@@ -15,7 +15,7 @@ export default function AdminHome() {
   const [category2,setCategory2] = useState();
 
   function addProduct(){
-    axios.post("htt")
+    axios.post("http://localhost:3001")
   }
 
   return (
