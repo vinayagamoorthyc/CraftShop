@@ -1,0 +1,101 @@
+import React from 'react';
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem } from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.png'
+
+export default function AdminNav() {
+
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const navigate = useNavigate();
+
+  return (
+    <div>
+        <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} maxWidth='xl'>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand onClick={()=>navigate("/adminhome")}>
+          <img src={logo} alt="CRAFT" width={110} />
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="/">
+            Home &nbsp;&nbsp;&nbsp;|
+          </Link>
+        </NavbarItem>
+        
+        <NavbarItem>
+          <Link color="foreground" href="/shoppage">
+          &nbsp;Shop All &nbsp;&nbsp;&nbsp;|
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/aboutpage">
+          &nbsp;About Us &nbsp;&nbsp;&nbsp;|
+          </Link>
+        </NavbarItem>
+        <NavbarItem >
+          <button>
+           Contact
+          </button>
+        </NavbarItem>
+                
+      </NavbarContent>
+      <NavbarContent justify="end">
+
+      <NavbarItem onClick={()=>navigate("/cartpage")}>
+        <i style={{fontSize:'22px'}} class="bi bi-bag"></i>2
+        </NavbarItem>
+
+        <NavbarItem className="hidden lg:flex">
+          <Link href="/login" color='warning'>Login</Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Button as={Link} color="warning" href="/signup" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+        
+      </NavbarContent>
+        <Dropdown placement="bottom-end">
+          <DropdownTrigger>
+            <Avatar
+              as="button"
+              className="transition-transform"
+              color="warning"
+              name=""
+              size="md"
+              src={profile}
+            />
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Profile Actions" variant="flat">
+            <DropdownItem className="h-14 gap-2">
+              <p className="font-semibold">Signed in as</p>
+              <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
+            </DropdownItem>
+            <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
+            <DropdownItem key="edit" href='/likepage'>Liked Items</DropdownItem>
+            <DropdownItem key="help_and_feedback" onClick={()=>onOpen()}>Help & Feedback</DropdownItem>
+            <DropdownItem key="logout" color="danger">
+              Log Out
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      <NavbarMenu>
+        
+          <NavbarMenuItem>
+            <Link className="w-full" href="#" size="lg">
+                Home
+            </Link>
+          </NavbarMenuItem>
+
+      </NavbarMenu>
+    </Navbar>
+    </div>
+  )
+}
