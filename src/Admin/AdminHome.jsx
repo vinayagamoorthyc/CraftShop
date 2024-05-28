@@ -14,7 +14,8 @@ export default function AdminHome() {
   const [imgurl,setImgurl] = useState();
   const [category2,setCategory2] = useState();
 
-  function addProduct(){
+  function addProduct(event){
+    event.preventDefault();
     axios.post("http://localhost:3001/createProduct",{proname,prorate,desc,maker,category,category2,imgurl})
     .then(()=>alert("ok"))
     .catch(err=>console.log(err));
@@ -38,19 +39,19 @@ export default function AdminHome() {
           <div>
               <form action="#" className='admin_add_pro' onSubmit={addProduct}>
                   <input className='shop_btn' type="text" placeholder='Product Name'
-                  onChange={(e)=>setProname(e)}/>
+                  onChange={(e)=>setProname(e.target.value)}/>
                   <input className='shop_btn' type="number" placeholder='Product Price'
-                  onChange={(e)=>setProrate(e)} />
+                  onChange={(e)=>setProrate(e.target.value)} />
                   <input className='shop_btn' type="text" placeholder='Product Description'
-                  onChange={(e)=>setDesc(e)}/>
+                  onChange={(e)=>setDesc(e.target.value)}/>
                   <input className='shop_btn' type="text" placeholder='Product Maker Details'
-                  onChange={(e)=>setMaker(e)}/>
+                  onChange={(e)=>setMaker(e.target.value)}/>
                   <input className='shop_btn' type="text" placeholder='Product Category'
-                  onChange={(e)=>setCategory(e)}/>
+                  onChange={(e)=>setCategory(e.target.value)}/>
                   <input className='shop_btn' type="text" placeholder='Product Category2'
-                  onChange={(e)=>setCategory2(e)}/>
+                  onChange={(e)=>setCategory2(e.target.value)}/>
                   <input className='shop_btn' type="text" placeholder='Product Img URL'
-                  onChange={(e)=>setImgurl(e)}/>
+                  onChange={(e)=>setImgurl(e.target.value)}/>
                   <input className='shop_btn' type="submit" value="Add Product" />
               </form>
           </div>
