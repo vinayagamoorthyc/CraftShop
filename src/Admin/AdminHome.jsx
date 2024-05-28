@@ -13,6 +13,9 @@ export default function AdminHome() {
   const [imgurl,setImgurl] = useState();
   const [category2,setCategory2] = useState();
 
+  function addProduct(){
+    fetch("")
+  }
 
   return (
     <center className='admin_home_flex'>
@@ -30,14 +33,21 @@ export default function AdminHome() {
         
         <div className='admin_main_flex'>
           <div>
-              <form action="#" className='admin_add_pro'>
-                  <input className='shop_btn' type="text" placeholder='Product Name' />
-                  <input className='shop_btn' type="number" placeholder='Product Price' />
-                  <input className='shop_btn' type="text" placeholder='Product Description'/>
-                  <input className='shop_btn' type="text" placeholder='Product Maker Details'/>
-                  <input className='shop_btn' type="text" placeholder='Product Category'/>
-                  <input className='shop_btn' type="text" placeholder='Product Category2'/>
-                  <input className='shop_btn' type="text" placeholder='Product Img URL'/>
+              <form action="#" className='admin_add_pro' onSubmit={addProduct}>
+                  <input className='shop_btn' type="text" placeholder='Product Name'
+                  onChange={(e)=>setProname(e)} />
+                  <input className='shop_btn' type="number" placeholder='Product Price'
+                  onChange={(e)=>setProrate(e)} />
+                  <input className='shop_btn' type="text" placeholder='Product Description'
+                  onChange={(e)=>setDesc(e)}/>
+                  <input className='shop_btn' type="text" placeholder='Product Maker Details'
+                  onChange={(e)=>setMaker(e)}/>
+                  <input className='shop_btn' type="text" placeholder='Product Category'
+                  onChange={(e)=>setCategory(e)}/>
+                  <input className='shop_btn' type="text" placeholder='Product Category2'
+                  onChange={(e)=>setCategory2(e)}/>
+                  <input className='shop_btn' type="text" placeholder='Product Img URL'
+                  onChange={(e)=>setImgurl(e)}/>
                   <input className='shop_btn' type="submit" value="Add Product" />
               </form>
           </div>
