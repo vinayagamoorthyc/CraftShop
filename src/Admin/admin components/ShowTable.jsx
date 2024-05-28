@@ -1,69 +1,90 @@
-import React from "react";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, Spinner, Button} from "@nextui-org/react";
-import {useAsyncList} from "@react-stately/data";
+import React, { useEffect, useState } from "react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, User, Chip, Tooltip, getKeyValue} from "@nextui-org/react";
+import {EditIcon} from "./EditIcon";
+import {DeleteIcon} from "./DeleteIcon";
+import axios from "axios";
 
-export default function ShowTable() {
-  const [page, setPage] = React.useState(1);
-  const [isLoading, setIsLoading] = React.useState(true);
+const statusColorMap = {
+  active: "success",
+  paused: "danger",
+  vacation: "warning",
+};
 
-  let list = useAsyncList({
-    async load({signal, cursor}) {
-      if (cursor) {
-        setPage((prev) => prev + 1);
-      }
+const columns = [
+  {name: "NAME", uid: "name"},
+  {name: "ROLE", uid: "role"},
+  {name: "STATUS", uid: "status"},
+  {name: "ACTIONS", uid: "actions"},
+];
 
-      // If no cursor is available, then we're loading the first page.
-      // Otherwise, the cursor is the next URL to load, as returned from the previous page.
-      const res = await fetch(cursor || "", {signal});
-      let json = await res.json();
+export default function App() {
+    const [products,setProducts]=useState([]);
 
-      if (!cursor) {
-        setIsLoading(false);
-      }
+    useEffect(()=>{
+      axios.get("http://localhost:3001/getProduct")
+      .then((e)=>setProducts(e.data))
+      .catch((err)=>console.log(err));
+    })
 
-      return {
-        items: json.results,
-        cursor: json.next,
-      };
-    },
-  });
-
-  const hasMore = page < 9;
+  const renderCell = React.useCallback((user, columnKey) => {
+    const cellValue = user[columnKey];
+    switch (columnKey) {
+      case "name":
+        return (
+          <User
+            avatarProps={{radius: "lg", src: user.avatar}}
+            description={user.email}
+            name={cellValue}
+          >
+            {user.desc}
+          </User>
+        );
+      case "role":
+        return (
+          <div className="flex flex-col">
+            <p className="text-bold text-sm capitalize">{cellValue}</p>
+            <p className="text-bold text-sm capitalize text-default-400">{user.team}</p>
+          </div>
+        );
+      case "status":
+        return (
+          <Chip className="capitalize" color={statusColorMap[user.status]} size="sm" variant="flat">
+            {cellValue}
+          </Chip>
+        );
+      case "actions":
+        return (
+          <div className="relative flex items-center gap-2">
+            <Tooltip content="Edit user">
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+                <EditIcon />
+              </span>
+            </Tooltip>
+            <Tooltip color="danger" content="Delete user">
+              <span className="text-lg text-danger cursor-pointer active:opacity-50">
+                <DeleteIcon />
+              </span>
+            </Tooltip>
+          </div>
+        );
+      default:
+        return cellValue;
+    }
+  }, []);
 
   return (
-    <Table
-        style={{width:"85%"}}
-      isHeaderSticky
-      aria-label="Example table with client side sorting"
-      bottomContent={
-        hasMore && !isLoading ? (
-          <div className="flex w-full justify-center">
-            <Button isDisabled={list.isLoading} variant="flat" onPress={list.loadMore}>
-              {list.isLoading && <Spinner color="white" size="sm" />}
-              Load More
-            </Button>
-          </div>
-        ) : null
-      }
-      classNames={{
-        base: "max-h-[520px] overflow-scroll",
-        table: "min-h-[420px]",
-      }}
-    >
-      <TableHeader>
-        <TableColumn key="name">Product Name</TableColumn>
-        <TableColumn key="height">Height</TableColumn>
-        <TableColumn key="mass">Mass</TableColumn>
-        <TableColumn key="birth_year">Birth year</TableColumn>
+  <Table aria-label="Example table with custom cells">
+      <TableHeader columns={columns}>
+        {(column) => (
+          <TableColumn key={column.uid} align={column.uid === "actions" ? "center" : "start"}>
+            {column.name}
+          </TableColumn>
+        )}
       </TableHeader>
-      <TableBody
-        isLoading={isLoading}
-        items={list.items}
-        loadingContent={<Spinner label="Loading..." />}
-      >
+      <TableBody items={products}>
         {(item) => (
-          <TableRow key={item.name}>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+          <TableRow key={item._id}>
+            {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
           </TableRow>
         )}
       </TableBody>
