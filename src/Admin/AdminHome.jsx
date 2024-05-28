@@ -16,7 +16,7 @@ export default function AdminHome() {
 
   function addProduct(event){
     event.preventDefault();
-    axios.post("http://localhost:3001/createProduct",{proname,prorate,desc,maker,category,category2,imgurl})
+    axios.post("http://localhost:3001/createProduct",{proname,prorate,desc,maker,category,imgurl,category2})
     .then(()=>alert("ok"))
     .catch(err=>console.log(err));
   }
