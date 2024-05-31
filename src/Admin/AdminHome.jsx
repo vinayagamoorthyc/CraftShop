@@ -68,7 +68,7 @@ export default function AdminHome() {
                 <div className='font' style={{fontSize:"33px"}}>Inventory List</div>
                 <hr style={{border:"1.5px solid #",minWidth:"900px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn' onClick={()=>navigate("")}>
+                    <div><button className='filter_btn' onClick={()=>navigate("#adminnav")}>
                         Add Product</button>
                     </div>
                 </div>

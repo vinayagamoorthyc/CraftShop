@@ -9,7 +9,7 @@ export default function AdminNav() {
     const navigate = useNavigate();
 
   return (
-    <div>
+    <div id='adminnav'>
         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} maxWidth='xl'>
       <NavbarContent>
         <NavbarMenuToggle
