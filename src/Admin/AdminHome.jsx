@@ -4,8 +4,11 @@ import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
 import ShowTable from './admin components/ShowTable';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminHome() {
+  const navigate=useNavigate();
+
   const [proname,setProname] = useState();
   const [prorate,setProrate] = useState();
   const [desc,setDesc] = useState();
@@ -17,7 +20,7 @@ export default function AdminHome() {
   function addProduct(event){
     event.preventDefault();
     axios.post("http://localhost:3001/createProduct",{proname,prorate,desc,maker,category,imgurl,category2})
-    .then(()=>alert("ok"))
+    .then(()=>window.location.reload())
     .catch(err=>console.log(err));
   }
 
@@ -65,12 +68,12 @@ export default function AdminHome() {
                 <div className='font' style={{fontSize:"33px"}}>Inventory List</div>
                 <hr style={{border:"1.5px solid #",minWidth:"900px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn'>
+                    <div><button className='filter_btn' onClick={()=>navigate("")}>
                         Add Product</button>
                     </div>
                 </div>
         </div>
-        <div style={{width:"85%"}}>
+        <div style={{width:"85%",marginBottom:"25px"}}>
           <ShowTable/>
         </div>
 
