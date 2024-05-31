@@ -15,9 +15,9 @@ export default function ShowTable() {
   return (
     <Table aria-label="Example static collection table">
       <TableHeader>
-        <TableColumn>NAME</TableColumn>
-        <TableColumn>ROLE</TableColumn>
-        <TableColumn>STATUS</TableColumn>
+        <TableColumn>PRODUCT NAME</TableColumn>
+        <TableColumn>PRODUCT RATE</TableColumn>
+        <TableColumn>CATEGORY</TableColumn>
         <TableColumn>ACTIONS</TableColumn>
       </TableHeader>
       <TableBody>

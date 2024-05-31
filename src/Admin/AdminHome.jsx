@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./AdminHome.css"
 import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
@@ -70,8 +70,9 @@ export default function AdminHome() {
                     </div>
                 </div>
         </div>
-
-        <ShowTable/>
+        <div style={{width:"85%"}}>
+          <ShowTable/>
+        </div>
 
     </center>
   )
