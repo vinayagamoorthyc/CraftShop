@@ -32,7 +32,7 @@ export default function AdminHome() {
          <div className='font' style={{fontSize:"33px"}}>Product Inventory</div>
                 <hr style={{border:"1.5px solid #",minWidth:"820px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn'>
+                    <div><button className='filter_btn' onClick={()=>window.location="#admininventorylist"}>
                         Inventory List</button>
                     </div>
                 </div>
@@ -64,11 +64,11 @@ export default function AdminHome() {
         </div>
         <hr style={{marginTop:"35px"}}/>
 
-        <div className='p_head_flex' style={{width:"85%",marginTop:"25px",marginBottom:"15px"}}>
+        <div className='p_head_flex' style={{width:"85%",marginTop:"25px",marginBottom:"15px"}} id='admininventorylist'>
                 <div className='font' style={{fontSize:"33px"}}>Inventory List</div>
                 <hr style={{border:"1.5px solid #",minWidth:"900px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn' onClick={()=>navigate("#adminnav")}>
+                    <div><button className='filter_btn' onClick={()=>window.location="#adminnav"}>
                         Add Product</button>
                     </div>
                 </div>
