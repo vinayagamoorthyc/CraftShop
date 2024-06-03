@@ -30,13 +30,13 @@ export default function ProductUpdate() {
         .catch(err=>console.log(err))
       }, [])
 
-    //   const UpPro=(e)=>{
-    //     e.preventDefault();
-    //     axios.put("https://powerlendbackend.onrender.com/updateProduct/"+id, {proname, prorate, desc, overview, avail, category, imgurl})
-    //     .then(()=>{
-    //       navigate("/AdminPortal")
-    //     }).catch(err=>console.log(err))
-    //   }
+      const UpdateProduct=(e)=>{
+        e.preventDefault();
+        axios.put("http://localhost:3001/updateProduct/"+id, {proname, prorate, desc, maker, category, category2,imgurl})
+        .then(()=>{
+          navigate("/adminhome")
+        }).catch(err=>console.log(err))
+      }
 
   return (
     <center>
@@ -44,7 +44,7 @@ export default function ProductUpdate() {
          <div className='font' style={{fontSize:"33px"}}>Update Inventory</div>
                 <hr style={{border:"1.5px solid #",minWidth:"890px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn' onClick={()=>navigate("/")}>
+                    <div><button className='filter_btn' onClick={()=>navigate("/adminhome")}>
                         Cancel</button>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export default function ProductUpdate() {
         
         <div className='admin_main_flex'>
           <div>
-              <form action="#" className='admin_add_pro' >
+              <form action="#" className='admin_add_pro' onSubmit={UpdateProduct}>
                   <input className='shop_btn' type="text" placeholder='Product Name' value={proname}
                   onChange={(e)=>setProname(e.target.value)} required/>
                   <input className='shop_btn' type="number" placeholder='Product Price' value={prorate}
