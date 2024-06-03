@@ -11,6 +11,7 @@ import MyProfile from './pages/MyProfile';
 import LikePage from './pages/LikePage';
 import CartPage from './pages/CartPage';
 import AdminHome from './Admin/AdminHome';
+import ProductUpdate from './Admin/admin pages/ProductUpdate';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/likepage' element={<LikePage/>} />
         <Route path='/cartpage' element={<CartPage/>} />
         <Route path='/adminhome' element={<AdminHome/>} />
+        <Route path='/productupdate/:id' element={<ProductUpdate/>} />
       </Routes>
     </NextUIProvider>
   );

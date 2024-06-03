@@ -4,10 +4,8 @@ import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
 import ShowTable from './admin components/ShowTable';
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 
 export default function AdminHome() {
-  const navigate=useNavigate();
 
   const [proname,setProname] = useState();
   const [prorate,setProrate] = useState();
@@ -42,19 +40,19 @@ export default function AdminHome() {
           <div>
               <form action="#" className='admin_add_pro' onSubmit={addProduct}>
                   <input className='shop_btn' type="text" placeholder='Product Name'
-                  onChange={(e)=>setProname(e.target.value)}/>
+                  onChange={(e)=>setProname(e.target.value)} required/>
                   <input className='shop_btn' type="number" placeholder='Product Price'
-                  onChange={(e)=>setProrate(e.target.value)} />
+                  onChange={(e)=>setProrate(e.target.value)} required/>
                   <input className='shop_btn' type="text" placeholder='Product Description'
-                  onChange={(e)=>setDesc(e.target.value)}/>
+                  onChange={(e)=>setDesc(e.target.value)} required/>
                   <input className='shop_btn' type="text" placeholder='Product Maker Details'
-                  onChange={(e)=>setMaker(e.target.value)}/>
+                  onChange={(e)=>setMaker(e.target.value)} required/>
                   <input className='shop_btn' type="text" placeholder='Product Category'
-                  onChange={(e)=>setCategory(e.target.value)}/>
+                  onChange={(e)=>setCategory(e.target.value)} required/>
                   <input className='shop_btn' type="text" placeholder='Product Category2'
-                  onChange={(e)=>setCategory2(e.target.value)}/>
+                  onChange={(e)=>setCategory2(e.target.value)} required/>
                   <input className='shop_btn' type="text" placeholder='Product Img URL'
-                  onChange={(e)=>setImgurl(e.target.value)}/>
+                  onChange={(e)=>setImgurl(e.target.value)} required/>
                   <input className='shop_btn' type="submit" value="Add Product" />
               </form>
           </div>

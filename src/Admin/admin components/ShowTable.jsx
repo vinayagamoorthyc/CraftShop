@@ -4,8 +4,10 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Tooltip
 import axios from "axios";
 import {EditIcon} from "./EditIcon";
 import {DeleteIcon} from "./DeleteIcon";
+import { useNavigate } from "react-router-dom";
 
 export default function ShowTable() {
+  const navigate=useNavigate();
   const [products,setProducts]=useState([]);
   // const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
@@ -45,7 +47,7 @@ export default function ShowTable() {
               <div className="relative flex items-center gap-2">
                 <Tooltip content="Edit Details">
                   <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                    <EditIcon />
+                    <EditIcon onClick={()=>navigate(`/productupdate/${e._id}`)} />
                   </span>
                 </Tooltip>
                 <Tooltip color="danger" content="Delete Product">
