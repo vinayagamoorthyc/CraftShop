@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import img from "/Users/vinayagamoorthyc/Documents/MERN Training/Last Project/craftshop/src/assets/preview.png"
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function ProductUpdate() {
+
+  const {id}=useParams();
+  const navigate=useNavigate();
     
     const [proname,setProname] = useState();
     const [prorate,setProrate] = useState();
@@ -13,18 +17,26 @@ export default function ProductUpdate() {
     const [category2,setCategory2] = useState();
 
     useEffect(()=>{
-        axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
-        .then(e=>{ console.log(e)
+        axios.get("http://localhost:3001/getParticular/"+id)
+        .then(e=>{
           setProname(e.data.proname)
           setProrate(e.data.prorate)  
           setDesc(e.data.desc)    
-          setOverview(e.data.overview)
-          setAvail(e.data.avail)
+          setMaker(e.data.maker)
           setCategory(e.data.category)
+          setCategory2(e.data.category2)
           setImgurl(e.data.imgurl)
         })
         .catch(err=>console.log(err))
       }, [])
+
+    //   const UpPro=(e)=>{
+    //     e.preventDefault();
+    //     axios.put("https://powerlendbackend.onrender.com/updateProduct/"+id, {proname, prorate, desc, overview, avail, category, imgurl})
+    //     .then(()=>{
+    //       navigate("/AdminPortal")
+    //     }).catch(err=>console.log(err))
+    //   }
 
   return (
     <center>
@@ -32,7 +44,7 @@ export default function ProductUpdate() {
          <div className='font' style={{fontSize:"33px"}}>Update Inventory</div>
                 <hr style={{border:"1.5px solid #",minWidth:"890px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn' onClick={()=>window.location="#adminhome"}>
+                    <div><button className='filter_btn' onClick={()=>navigate("/")}>
                         Cancel</button>
                     </div>
                 </div>
