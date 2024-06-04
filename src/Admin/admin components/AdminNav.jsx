@@ -23,24 +23,24 @@ export default function AdminNav() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/">
+          <Link color="foreground" href="#">
             Home &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
         
         <NavbarItem>
-          <Link color="foreground" href="/shoppage">
-          &nbsp;Shop All &nbsp;&nbsp;&nbsp;|
+          <Link color="foreground" href="#">
+          &nbsp;Users &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/aboutpage">
-          &nbsp;About Us &nbsp;&nbsp;&nbsp;|
+          &nbsp;Subscribers &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
         <NavbarItem >
-          <button>
-           Contact
+          <button on onClick={()=>navigate("#")}>
+           Reports
           </button>
         </NavbarItem>
                 
@@ -48,7 +48,7 @@ export default function AdminNav() {
       <NavbarContent justify="end">
 
         <NavbarItem>
-          <Button as={Link} color="warning" href="/signup" variant="flat">
+          <Button as={Link} color="warning" href="/" variant="flat">
             Sign Out
           </Button>
         </NavbarItem>
