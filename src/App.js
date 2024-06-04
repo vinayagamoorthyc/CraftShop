@@ -11,7 +11,7 @@ import MyProfile from './pages/MyProfile';
 import LikePage from './pages/LikePage';
 import CartPage from './pages/CartPage';
 import AdminHome from './Admin/AdminHome';
-import ProductUpdate from './Admin/admin pages/ProductUpdate';
+import ProductUpdate from './Admin/ProductUpdate';
 
 
 function App() {

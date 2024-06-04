@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import "./AdminHome.css"
-import AdminNav from './admin components/AdminNav';
 import img from "../assets/rpro.png"
-import ShowTable from './admin components/ShowTable';
 import axios from "axios";
+import AdminNav from './AdminNav';
+import ShowTable from './ShowTable';
 
 export default function AdminHome() {
 
