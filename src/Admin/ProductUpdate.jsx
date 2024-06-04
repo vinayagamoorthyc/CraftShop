@@ -28,7 +28,7 @@ export default function ProductUpdate() {
           setImgurl(e.data.imgurl)
         })
         .catch(err=>console.log(err))
-      }, []);
+      },[id]);
 
       const UpdateProduct=(e)=>{
         e.preventDefault();
