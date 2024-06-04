@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 export default function ProductUpdate() {
 
-  const {id}=useParams();
+  const id=useParams();
   const navigate=useNavigate();
     
     const [proname,setProname] = useState();
@@ -28,7 +28,7 @@ export default function ProductUpdate() {
           setImgurl(e.data.imgurl)
         })
         .catch(err=>console.log(err))
-      }, [])
+      }, []);
 
       const UpdateProduct=(e)=>{
         e.preventDefault();
