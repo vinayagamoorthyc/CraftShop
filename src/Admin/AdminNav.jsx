@@ -34,7 +34,7 @@ export default function AdminNav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/aboutpage">
+          <Link color="foreground" href="/subscriberspage">
           &nbsp;Subscribers &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>
