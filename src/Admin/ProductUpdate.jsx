@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import img from "../assets/preview.png"
+import React, { useEffect, useState } from 'react';
+import img from "../assets/preview.png";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ export default function ProductUpdate() {
         axios.put("http://localhost:3001/updateProduct/"+id, {proname, prorate, desc, maker, category, category2,imgurl})
         .then(()=>{
           navigate("/adminhome")
-        }).catch(err=>console.log(err))
+        }).catch(err=>console.log(err));
       }
 
   return (
