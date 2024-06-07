@@ -1,9 +1,16 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Tooltip} from "@nextui-org/react";
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DeleteIcon } from "./DeleteIcon";
 
 export default function ReportsPage() {
   const navigate=useNavigate();
+  const [reports,setReports]=useState([]);
+
+
+  function deleteReport(){
+
+  }
   return (
     <center>
     <div className='p_head_flex' style={{width:"85%",marginTop:"40px",marginBottom:"55px"}}>
@@ -24,7 +31,7 @@ export default function ReportsPage() {
         </TableHeader>
         <TableBody>
         {
-          subcribers.map((e)=>{
+          reports.map((e)=>{
             return(
             <TableRow>
               <TableCell>{e.email}</TableCell>
@@ -32,7 +39,7 @@ export default function ReportsPage() {
                 <div className="relative flex items-center gap-2">
                   <Tooltip color="danger" content="Delete Product">
                     <span className="text-lg text-danger cursor-pointer active:opacity-50">
-                      <DeleteIcon onClick={()=>deleteSubscriber(e._id)}/>
+                      <DeleteIcon onClick={()=>deleteReport(e._id)}/>
                     </span>
                   </Tooltip>
                 </div>
