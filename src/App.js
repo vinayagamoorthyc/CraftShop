@@ -13,6 +13,7 @@ import CartPage from './pages/CartPage';
 import AdminHome from './Admin/AdminHome';
 import ProductUpdate from './Admin/ProductUpdate';
 import NewsletterPage from './Admin/NewsletterPage';
+import ReportsPage from './Admin/ReportsPage';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path='/adminhome' element={<AdminHome/>} />
         <Route path='/productupdate/:id' element={<ProductUpdate/>} />
         <Route path='/subscriberspage' element={<NewsletterPage/>} />
+        <Route path='/reportspage' element={<ReportsPage/>} />
       </Routes>
     </NextUIProvider>
   );

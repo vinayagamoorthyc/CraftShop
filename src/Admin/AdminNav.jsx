@@ -39,7 +39,7 @@ export default function AdminNav() {
           </Link>
         </NavbarItem>
         <NavbarItem >
-          <button on onClick={()=>navigate("#")}>
+          <button on onClick={()=>navigate("/reportspage")}>
            Reports
           </button>
         </NavbarItem>
