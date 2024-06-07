@@ -14,8 +14,8 @@ export default function ReportsPage() {
   return (
     <center>
     <div className='p_head_flex' style={{width:"85%",marginTop:"40px",marginBottom:"55px"}}>
-     <div className='font' style={{fontSize:"33px"}}>Subcribers List</div>
-            <hr style={{border:"1.5px solid #",minWidth:"890px"}}/>
+     <div className='font' style={{fontSize:"33px"}}>Reports List</div>
+            <hr style={{border:"1.5px solid #",minWidth:"960px"}}/>
             <div className='p_head_arrows' style={{gap:"10px"}}>
                 <div><button className='filter_btn' onClick={()=>navigate("/adminhome")}>
                     Home</button>
@@ -26,7 +26,7 @@ export default function ReportsPage() {
     <div style={{width:"80%"}}>
       <Table aria-label="Example static collection table">
         <TableHeader>
-          <TableColumn>SUBSCRIBER EMAIL</TableColumn>
+          <TableColumn>REPORTS BY USERS</TableColumn>
           <TableColumn>ACTIONS</TableColumn>
         </TableHeader>
         <TableBody>
