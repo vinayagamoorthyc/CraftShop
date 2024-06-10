@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Modal, useDisclosure, ModalContent, ModalFooter, ModalBody, ModalHeader} from "@nextui-org/react";
 import logo from '../assets/logo.png'
 import profile from '../assets/profile.jpg';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const navigate = useNavigate();
+
+    const [report,setReport] = useState();
+
+    function addReport(e){
+      e.preventDefault();
+      axios.post("http://localhost:3001/addReport",{report})
+      .then(()=>alert("ok"))
+      .catch(err=>console.log(err));
+  }
 
   return (
     <div>
@@ -113,10 +123,13 @@ export default function NavBar() {
               <ModalHeader className="flex flex-col gap-1 font" 
               style={{fontSize:"21px"}}>Contact Us</ModalHeader>
               <ModalBody>
-                  <div>
-                    <input type="text" name="" id="newsemail" 
-                    style={{border:"1.5px solid #00000012",padding:"10px",width:"100%"}} placeholder='Leave your message here'/>
-                  </div>
+                  <form action='#' onSubmit={addReport} style={{display:"flex",flexWrap:"nowrap"}}>
+                    <input type="text" name="" id="newsemail" onChange={(e)=>setReport(e.target.value)}
+                      style={{border:"1.5px solid #00000012",padding:"10px",width:"100%"}} placeholder='Leave your message here'/>
+                    <button type='submit' style={{border:"1.5px solid #00000012",padding:"10px",width:"18%"}}>
+                      <i className='bi bi-chat-quote'></i>
+                    </button>
+                  </form>
                   <div>
                     <p className='shop_btn' style={{fontSize:"15px",color:"gray",border:"1px solid gray"}}>
                         Using Email &nbsp;&nbsp;

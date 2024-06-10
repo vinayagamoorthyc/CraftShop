@@ -1,15 +1,23 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Tooltip} from "@nextui-org/react";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DeleteIcon } from "./DeleteIcon";
+import axios from "axios";
 
 export default function ReportsPage() {
   const navigate=useNavigate();
   const [reports,setReports]=useState([]);
 
+  useEffect(()=>{
+    axios.get("http://localhost:3001/getReports")
+    .then((res)=>setReports(res.data))
+    .catch((err)=>console.log(err));
+  },[]);
 
-  function deleteReport(){
-
+  function deleteReport(id){
+    axios.delete("http://localhost:3001/deleteReport/"+id)
+    .then(()=>window.location.reload())
+    .catch(err=>console.log(err));
   }
   return (
     <center>
@@ -34,7 +42,7 @@ export default function ReportsPage() {
           reports.map((e)=>{
             return(
             <TableRow>
-              <TableCell>{e.email}</TableCell>
+              <TableCell>{e.report}</TableCell>
               <TableCell>
                 <div className="relative flex items-center gap-2">
                   <Tooltip color="danger" content="Delete Product">
