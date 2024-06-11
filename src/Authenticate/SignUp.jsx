@@ -16,8 +16,8 @@ export default function SignUp() {
   const handleSubmit=(e)=>{
     e.preventDefault();
     axios.post("http://localhost:3001/register", {username, email, password})
-    .then((e)=>{
-      alert(e.data)
+    .then(()=>{
+      alert("ok");
     }).catch(err=>console.log(err))
   }
   return (
