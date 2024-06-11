@@ -17,7 +17,7 @@ export default function SignUp() {
     e.preventDefault();
     axios.post("http://localhost:3001/register", {username, email, password})
     .then((e)=>{
-      navigate("/login");
+      alert(e.data)
     }).catch(err=>console.log(err))
   }
   return (
@@ -33,7 +33,7 @@ export default function SignUp() {
                     <div><input type="text" placeholder='Enter your name' className='shop_btn' style={{width:"300px"}} required
                       onChange={(e)=>setUsername(e.target.value)}
                     /></div>
-                    <div><input type="email" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}} required
+                    <div><input type="text" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}} 
                       onChange={(e)=>setEmail(e.target.value)}
                     /></div>
                     <div><input type="text" name="" id="" placeholder='Enter your password' className='shop_btn' style={{width:"300px"}} required
