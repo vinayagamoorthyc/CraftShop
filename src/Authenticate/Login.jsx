@@ -3,12 +3,31 @@ import "./Login.css";
 import img from '../assets/login.jpeg';
 import logo from "../assets/logo.png";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Login() {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const navigate = useNavigate();
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        axios.post("http://localhost:3001/login", {email, password})
+        .then((res)=>{
+          window.localStorage.setItem("userid", res.data.id);
+          window.localStorage.setItem("token", res.data.tok);
+          if(res.data.Status === "success"){
+            if(res.data.role === "admin"){
+              navigate("/adminnhome");
+            }else{
+              navigate("/");
+            }
+          }else{
+            alert("wrong");
+          }
+        }).catch(err=>console.log(err))
+      }
 
   return (
     <center>
@@ -21,13 +40,23 @@ export default function Login() {
                 </div>
                 
                 <div style={{color:"black",fontSize:"14px"}}>Please enter your details</div>
-                <div><input type="text" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}}/></div>
-                <div><input type="text" name="" id="" placeholder='Enter your password' className='shop_btn' style={{width:"300px"}}/></div>
-                <div>
-                    <button className='shop_btn'>
-                        Sign In &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
-                    </button>
-                </div>
+                <form action='#' onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",gap:"15px",alignItems:"flex-start"}}>
+                    <div>
+                        <input type="text" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}}
+                            onChange={e=>setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <input type="password" placeholder='Enter your password' className='shop_btn' style={{width:"300px"}}
+                            onChange={e=>setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <button className='shop_btn'>
+                            Sign In &nbsp;&nbsp;<i style={{borderLeft:"1px solid black",padding:"13px 0px 13px 10px"}} class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
                 <a href="/signup" style={{color:'orange'}}>Don't have an account!</a>
                 <div style={{display:'flex',alignItems:"center",fontSize:'14px'}}>
                     <hr style={{border:"1px solid #00000012",minWidth:"45px"}}/> &nbsp;
