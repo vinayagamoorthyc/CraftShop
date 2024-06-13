@@ -34,7 +34,7 @@ export default function SignUp() {
                     <div><input type="text" placeholder='Enter your name' className='shop_btn' style={{width:"300px"}} required
                       onChange={(e)=>setUsername(e.target.value)}
                     /></div>
-                    <div><input type="text" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}} 
+                    <div><input type="email" placeholder='Enter your email' className='shop_btn' style={{width:"300px"}} required
                       onChange={(e)=>setEmail(e.target.value)}
                     /></div>
                     <div><input type="text" name="" id="" placeholder='Enter your password' className='shop_btn' style={{width:"300px"}} required

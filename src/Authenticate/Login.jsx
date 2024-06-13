@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Login.css";
 import img from '../assets/login.jpeg';
 import logo from "../assets/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const navigate = useNavigate();
+
   return (
     <center>
         <div className="login_flex">
