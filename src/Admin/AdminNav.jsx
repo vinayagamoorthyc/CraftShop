@@ -8,6 +8,11 @@ export default function AdminNav() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const navigate = useNavigate();
 
+    const logout=()=>{
+      window.localStorage.clear();
+      navigate("/");
+    }
+
   return (
     <div id='adminnav'>
         <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} maxWidth='xl'>
@@ -48,7 +53,7 @@ export default function AdminNav() {
       <NavbarContent justify="end">
 
         <NavbarItem>
-          <Button as={Link} color="warning" href="/" variant="flat">
+          <Button as={Link} color="warning" href="/" variant="flat" onClick={()=>logout()}>
             Sign Out
           </Button>
         </NavbarItem>

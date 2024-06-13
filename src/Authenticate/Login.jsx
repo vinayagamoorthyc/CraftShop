@@ -19,7 +19,7 @@ export default function Login() {
           window.localStorage.setItem("token", res.data.tok);
           if(res.data.Status === "success"){
             if(res.data.role === "admin"){
-              navigate("/adminnhome");
+              navigate("/adminhome");
             }else{
               navigate("/");
             }

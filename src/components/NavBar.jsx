@@ -19,6 +19,11 @@ export default function NavBar() {
       .catch(err=>console.log(err));
   }
 
+  const logout=()=>{
+    window.localStorage.clear();
+    navigate("/");
+  }
+
   return (
     <div>
          <Navbar onMenuOpenChange={setIsMenuOpen} shouldHideOnScroll={true} maxWidth='xl'>
@@ -92,7 +97,7 @@ export default function NavBar() {
             <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
             <DropdownItem key="edit" href='/likepage'>Liked Items</DropdownItem>
             <DropdownItem key="help_and_feedback" onClick={()=>onOpen()}>Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
+            <DropdownItem key="logout" color="danger" onClick={()=>logout()}>
               Log Out
             </DropdownItem>
           </DropdownMenu>
