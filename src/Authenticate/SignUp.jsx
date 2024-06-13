@@ -17,9 +17,10 @@ export default function SignUp() {
     e.preventDefault();
     axios.post("http://localhost:3001/register", {username, email, password})
     .then(()=>{
-      alert("ok");
-    }).catch(err=>console.log(err))
+      navigate("/login");
+    }).catch(err=>console.log(err));
   }
+  
   return (
     <center>
         <div className="login_flex">
