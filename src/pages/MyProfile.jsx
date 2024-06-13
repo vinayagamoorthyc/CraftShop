@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import './MyProfile.css';
 import { Avatar } from '@nextui-org/react';
 import img from '../assets/profile.jpg';
 import Footer from '../components/Footer';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function MyProfile() {
+  const navigate=useNavigate();
+
+  const userid = window.localStorage.getItem("userid");
+  const [username, setUsername]=useState("Nothing to show");
+  const [email, setEmail]=useState("Nothing to show");
+  const [phone, setPhone]=useState("00000 00000");
+  const [firstname, setFirstname]=useState("Nothing to show");
+  const [lastname, setLastname]=useState("Nothing to show");
+  const [bio, setBio]=useState("Nothing to show");
+  const [country, setCountry]=useState("Nothing to show");
+  const [citystate, setCitystate]=useState("Nothing to show");
+  const [postalcode, setPostalcode]=useState("000 000");
+  const [street, setStreet]=useState("Nothing to show");
+
+  useEffect(()=>{
+    axios.get("http://localhost:3001/getUser/"+userid)
+    .then((e)=>{
+      setUsername(e.data.username);
+      setEmail(e.data.email);
+      setPhone(e.data.phone);
+      setFirstname(e.data.firstname);
+      setLastname(e.data.lastname);
+      setBio(e.data.bio);
+      setCountry(e.data.country);
+      setCitystate(e.data.citystate);
+      setPostalcode(e.data.postalcode);
+      setStreet(e.data.street);
+    }).catch(err=>console.log(err));
+    }, [userid]);
+
   return (
     <center>
         <NavBar/>
@@ -15,13 +47,15 @@ export default function MyProfile() {
           <div className='profile_img_box'>
             <Avatar className="w-20 h-20 text-large" size="lg" src={img} />
             <div>
-              <div style={{fontSize:"19px"}}>Vinayaga Moorthy</div>
-              <div style={{color:"gray",fontSize:"15px"}}>Coimbatore,Tamil Nadu</div>
+              <div style={{fontSize:"19px"}}>{username}</div>
+              <div style={{color:"gray",fontSize:"15px"}}>{citystate}</div>
               <div style={{color:"gray",fontSize:"15px"}}>Member</div>
             </div>
             <button className='shop_btn' style={{
               color:"gray",borderColor:"#00000027",position:"absolute",top:"20px",right:"20px",fontSize:"13px",padding:"5px",borderRadius:"3px"
-              }}>
+              }}
+              onClick={()=>navigate(`/editprofile/${userid}`)}
+              >
               &nbsp;Edit&nbsp;&nbsp; <i class="bi bi-pencil-square"></i>&nbsp;
             </button>
           </div>
@@ -31,23 +65,23 @@ export default function MyProfile() {
               <div className="profile_content_flex">
                 <div>
                   <div style={{color:"gray"}}>First Name</div>
-                  <p>Vinayaga</p>
+                  <p>{firstname}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Last Name</div>
-                  <p>Moorthy</p>
+                  <p>{lastname}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Email Address</div>
-                  <p>vinayagamoorthy2709@gmail.com</p>
+                  <p>{email}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Phone</div>
-                  <p>9360810429</p>
+                  <p>{phone}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Bio</div>
-                  <p>Traveller, Photography</p>
+                  <p>{bio}</p>
                 </div>
               </div>
             </div>
@@ -56,19 +90,19 @@ export default function MyProfile() {
               <div className="profile_content_flex">
                 <div>
                   <div style={{color:"gray"}}>Country</div>
-                  <p>India</p>
+                  <p>{country}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>City/State</div>
-                  <p>Coimbatore, Tamil Nadu</p>
+                  <p>{citystate}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Postal Code</div>
-                  <p>614622</p>
+                  <p>{postalcode}</p>
                 </div>
                 <div>
                   <div style={{color:"gray"}}>Local Street</div>
-                  <p>Othakal Mandapam</p>
+                  <p>{street}</p>
                 </div>
               </div>
             </div>
