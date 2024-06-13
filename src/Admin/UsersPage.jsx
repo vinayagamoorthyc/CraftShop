@@ -10,13 +10,13 @@ export default function UsersPage() {
   const [users,setUsers]=useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/getReports")
+    axios.get("http://localhost:3001/getUserDetails")
     .then((res)=>setUsers(res.data))
     .catch((err)=>console.log(err));
   },[]);
 
   function deleteUser(id){
-    axios.delete("http://localhost:3001/deleteReport/"+id)
+    axios.delete("http://localhost:3001/deleteUser/"+id)
     .then(()=>window.location.reload())
     .catch(err=>console.log(err));
   }
@@ -25,7 +25,7 @@ export default function UsersPage() {
     <center>
     <div className='p_head_flex' style={{width:"85%",marginTop:"40px",marginBottom:"55px"}}>
      <div className='font' style={{fontSize:"33px"}}>Customer List</div>
-            <hr style={{border:"1.5px solid #",minWidth:"960px"}}/>
+            <hr style={{border:"1.5px solid #",minWidth:"920px"}}/>
             <div className='p_head_arrows' style={{gap:"10px"}}>
                 <div><button className='filter_btn' onClick={()=>navigate("/adminhome")}>
                     Home</button>
@@ -37,6 +37,8 @@ export default function UsersPage() {
       <Table aria-label="Example static collection table">
         <TableHeader>
           <TableColumn>OUR CUSTOMERS</TableColumn>
+          <TableColumn>EMAIL</TableColumn>
+          <TableColumn>ROLE</TableColumn>
           <TableColumn>ACTIONS</TableColumn>
         </TableHeader>
         <TableBody>
@@ -44,7 +46,9 @@ export default function UsersPage() {
           users.map((e)=>{
             return(
             <TableRow>
-              <TableCell>{e.report}</TableCell>
+              <TableCell>{e.username}</TableCell>
+              <TableCell>{e.email}</TableCell>
+              <TableCell>{e.role}</TableCell>
               <TableCell>
                 <div className="relative flex items-center gap-2">
                   <Tooltip color="danger" content="Delete Product">
