@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AboutPage.css';
 import NavBar from '../components/NavBar';
 import img from '../assets/aboutpage.jpg';
@@ -8,6 +8,9 @@ import Footer from '../components/Footer';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 
 export default function AboutPage() {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  })
   return (
     <center>
         <NavBar/>

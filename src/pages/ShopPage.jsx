@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ShopPage.css';
 import RCard from '../cards/RCard';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer.jsx';
 
 export default function ShopPage() {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    })
+
   return (
     <center>
         <NavBar/>
