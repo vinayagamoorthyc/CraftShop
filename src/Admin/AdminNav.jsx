@@ -34,7 +34,7 @@ export default function AdminNav() {
         </NavbarItem>
         
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/userspage">
           &nbsp;Users &nbsp;&nbsp;&nbsp;|
           </Link>
         </NavbarItem>

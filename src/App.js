@@ -14,6 +14,7 @@ import AdminHome from './Admin/AdminHome';
 import ProductUpdate from './Admin/ProductUpdate';
 import NewsletterPage from './Admin/NewsletterPage';
 import ReportsPage from './Admin/ReportsPage';
+import UsersPage from './Admin/UsersPage';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path='/productupdate/:id' element={<ProductUpdate/>} />
         <Route path='/subscriberspage' element={<NewsletterPage/>} />
         <Route path='/reportspage' element={<ReportsPage/>} />
+        <Route path='/userspage' element={<UsersPage/>} />
       </Routes>
     </NextUIProvider>
   );
