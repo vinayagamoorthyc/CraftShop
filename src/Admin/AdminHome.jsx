@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "./AdminHome.css"
-import img from "../assets/rpro.png"
 import axios from "axios";
 import AdminNav from './AdminNav';
 import ShowTable from './ShowTable';
@@ -12,7 +11,7 @@ export default function AdminHome() {
   const [desc,setDesc] = useState();
   const [maker,setMaker] = useState();
   const [category,setCategory] = useState();
-  const [imgurl,setImgurl] = useState();
+  const [imgurl,setImgurl] = useState("https://media.istockphoto.com/id/1452662817/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=bGI_FngX0iexE3EBANPw9nbXkrJJA4-dcEJhCrP8qMw=");
   const [category2,setCategory2] = useState();
 
   function addProduct(event){
@@ -57,7 +56,7 @@ export default function AdminHome() {
               </form>
           </div>
           <div>
-              <img src={img} alt="" width={370} />
+              <img src={imgurl} alt="" width={370} />
           </div>
         </div>
         <hr style={{marginTop:"35px"}}/>

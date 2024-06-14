@@ -71,7 +71,7 @@ export default function ProductUpdate() {
               </form>
           </div>
           <div>
-              <img src={img} alt="" width={370} />
+              <img src={imgurl} alt="" width={370} />
           </div>
         </div>
     </center>

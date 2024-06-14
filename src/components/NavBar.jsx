@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Modal, useDisclosure, ModalContent, ModalFooter, ModalBody, ModalHeader} from "@nextui-org/react";
 import logo from '../assets/logo.png'
 import profile from '../assets/profile.jpg';
@@ -8,9 +8,20 @@ import axios from 'axios';
 export default function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const [hide,setHide]=useState(true);
+    const token = window.localStorage.getItem("token");
     const navigate = useNavigate();
+    const logemail=window.localStorage.getItem("email");
 
     const [report,setReport] = useState();
+
+    useEffect(()=>{
+      if(token!=null){
+        setHide(false);
+      }else{
+        setHide(true);
+      }
+      }, [token]);
 
     function addReport(e){
       e.preventDefault();
@@ -63,24 +74,26 @@ export default function NavBar() {
       </NavbarContent>
       <NavbarContent justify="end">
 
-      <NavbarItem onClick={()=>navigate("/cartpage")}>
+      <NavbarItem onClick={()=>navigate("/cartpage")} hidden={hide}>
         <i style={{fontSize:'22px'}} class="bi bi-bag"></i>2
         </NavbarItem>
 
+        <div hidden={!hide}>
         <NavbarItem className="hidden lg:flex">
-          <Link href="/login" color='warning'>Login</Link>
-        </NavbarItem>
+          <Link href="/login" color='warning' >Login</Link>
+        </NavbarItem></div>
 
-        <NavbarItem>
+        <NavbarItem hidden={!hide}>
           <Button as={Link} color="warning" href="/signup" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
         
       </NavbarContent>
-        <Dropdown placement="bottom-end">
+      <div hidden={hide}>
+      <Dropdown placement="bottom-end">
           <DropdownTrigger>
-            <Avatar
+            <Avatar 
               as="button"
               className="transition-transform"
               color="warning"
@@ -92,7 +105,7 @@ export default function NavBar() {
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold" style={{color:"gray"}}>demo@gmail.com</p>
+              <p className="font-semibold" style={{color:"gray"}}>{logemail}</p>
             </DropdownItem>
             <DropdownItem key="profile" color='warning' href='/profilepage'>My Profile</DropdownItem>
             <DropdownItem key="edit" href='/likepage'>Liked Items</DropdownItem>
@@ -101,7 +114,7 @@ export default function NavBar() {
               Log Out
             </DropdownItem>
           </DropdownMenu>
-        </Dropdown>
+        </Dropdown></div>
       <NavbarMenu>
         
           <NavbarMenuItem>
