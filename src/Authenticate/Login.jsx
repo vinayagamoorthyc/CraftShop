@@ -17,6 +17,7 @@ export default function Login() {
         .then((res)=>{
           window.localStorage.setItem("userid", res.data.id);
           window.localStorage.setItem("token", res.data.tok);
+          window.localStorage.setItem("email", res.data.mail);
           if(res.data.Status === "success"){
             if(res.data.role === "admin"){
               navigate("/adminhome");
