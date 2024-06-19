@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from "react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Tooltip} from "@nextui-org/react";
 import axios from "axios";
@@ -37,7 +38,9 @@ export default function ShowTable() {
         products.map((e)=>{
           return(
           <TableRow>
-            <TableCell>{e.imgurl}</TableCell>
+            <TableCell>
+              <image src={e.imgurl} width={75}/>
+            </TableCell>
             <TableCell>{e.proname}</TableCell>
             <TableCell>{e.prorate}</TableCell>
             <TableCell>{e.category}</TableCell>
