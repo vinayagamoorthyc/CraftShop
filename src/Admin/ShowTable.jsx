@@ -39,7 +39,7 @@ export default function ShowTable() {
           return(
           <TableRow>
             <TableCell>
-              <image src={e.imgurl} width={75}/>
+              <img src={e.imgurl} width={75}/>
             </TableCell>
             <TableCell>{e.proname}</TableCell>
             <TableCell>{e.prorate}</TableCell>
