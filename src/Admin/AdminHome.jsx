@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import "./AdminHome.css"
-import axios from "axios"
-import AdminNav from './AdminNav'
-import ShowTable from './ShowTable'
+import React, { useState } from 'react';
+import "./AdminHome.css";
+import axios from "axios";
+import AdminNav from './AdminNav';
+import ShowTable from './ShowTable';
 
 export default function AdminHome() {
 
