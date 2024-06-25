@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./AdminHome.css"
-import axios from "axios";
+import axios from "axios"
 import AdminNav from './AdminNav';
 import ShowTable from './ShowTable';
 
