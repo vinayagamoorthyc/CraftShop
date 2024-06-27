@@ -1,6 +1,5 @@
 import React from 'react';
 import "./RCard.css";
-import img from "../assets/rpro.png";
 import { useNavigate } from 'react-router-dom';
 
 export default function RCard(props) {
