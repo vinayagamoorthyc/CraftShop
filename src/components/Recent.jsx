@@ -13,7 +13,7 @@ export default function Recent() {
         setProducts(e.data);
         })
         .catch(err=>console.log(err));
-        }, []);
+    }, []);
 
     const [filter, setFilter] = useState('recommended');
 
