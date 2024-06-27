@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './ShopPage.css'
 import RCard from '../cards/RCard'
 import NavBar from '../components/NavBar'
-import Footer from '../components/Footer.jsx'
-import axios from 'axios'
+import Footer from '../components/Footer.jsx';
+import axios from 'axios';
 
 export default function ShopPage() {
     const [products,setProducts]=useState([]);
