@@ -19,7 +19,7 @@ export default function Recent() {
 
     const filteredProducts = products.filter((item)=> {
 
-        const categoryMatch = filter === 'recommended' || item.category2 === filter;
+        const categoryMatch = item.category2 === filter;
     
         return categoryMatch;
       });
