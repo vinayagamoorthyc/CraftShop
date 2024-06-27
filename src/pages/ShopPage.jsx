@@ -19,9 +19,6 @@ export default function ShopPage() {
 
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
-    const handleFilterChange = (selectedFilter) => {
-        setFilter(selectedFilter);
-    };
     const handleSearchChange = (event) => {
         setSearch(event.target.value);
     }
@@ -44,16 +41,18 @@ export default function ShopPage() {
                 <div className='font' style={{fontSize:"33px"}}>Handy Products</div>
                 <hr style={{border:"1.5px solid #",minWidth:"365px"}}/>
                 <div className='p_head_arrows' style={{gap:"10px"}}>
-                    <div><button className='filter_btn'>
+                    <div><button className='filter_btn' onClick={()=>setFilter("Garden")}>
                         Garden</button></div>
-                    <div><button className='filter_btn'>
+                    <div><button className='filter_btn' onClick={()=>setFilter("Kitchen")}>
                         Kitchen</button></div>
-                    <div><button className='filter_btn' >
+                    <div><button className='filter_btn' onClick={()=>setFilter("Candles")}>
                         Candles</button></div>
-                    <div><button className='filter_btn'>
+                    <div><button className='filter_btn' onClick={()=>setFilter("Homeware")}>
                         Homewares</button></div>
                     <div>
-                        <input type="text" style={{border:"1px solid black",padding:"8px 15px 8px 20px",borderRadius:"10px"}} placeholder='Search'/>
+                        <input type="text"
+                        style={{border:"1px solid black",padding:"8px 15px 8px 20px",borderRadius:"10px"}} onChange={handleSearchChange}
+                        placeholder='Search'/>
                     </div>
                 </div>
             </div>
