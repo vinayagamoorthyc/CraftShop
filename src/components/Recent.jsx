@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import "./Recent.css";
 import RCard from '../cards/RCard';
 import axios from 'axios';
