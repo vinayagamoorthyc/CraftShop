@@ -1,25 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ProductPage.css';
 import NavBar from '../components/NavBar.jsx';
 import img from '../assets/preview.png';
 import { Tab, Tabs } from '@nextui-org/react';
 import Footer from '../components/Footer.jsx';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function ProductPage() {
     const {id} = useParams();
 
+    const [proname,setProname] = useState();
+    const [prorate,setProrate] = useState();
+    const [desc,setDesc] = useState();
+    const [maker,setMaker] = useState();
+    const [category,setCategory] = useState();
+    const [imgurl,setImgurl] = useState();
+    const [category2,setCategory2] = useState();
     
-    
+    useEffect(()=>{
+        axios.get("http://localhost:3001/getParticular/"+id)
+        .then(e=>{
+          setProname(e.data.proname)
+          setProrate(e.data.prorate)  
+          setDesc(e.data.desc)    
+          setMaker(e.data.maker)
+          setCategory(e.data.category)
+          setCategory2(e.data.category2)
+          setImgurl(e.data.imgurl)
+        })
+        .catch(err=>console.log(err))
+      },[id]);
+
   return (
     <div>
         <NavBar/><hr /><br />
         <hr />
         <div className="pro_flex">
-            <img src={img} alt="" className='pro_image' width={450} style={{borderRadius:"7px"}}/>
+            <img src={imgurl} alt="" className='pro_image' width={450} style={{borderRadius:"7px"}}/>
             <div className='pro_content'>
-                <div className='font' style={{fontSize:"30px"}}>Beautiful Flower Pot</div>
-                <div style={{color:"orange",fontSize:'20px'}}>₹ 986.00</div>
+                <div className='font' style={{fontSize:"30px"}}>{proname}</div>
+                <div style={{color:"orange",fontSize:'20px'}}>₹ {prorate}.00</div>
                 <div className='show_rating'>
                     <div class="mt-0 text-[gray] text-x tracking-[3px]">
                     ★★★★★ 
