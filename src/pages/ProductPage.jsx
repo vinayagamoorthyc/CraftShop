@@ -14,9 +14,7 @@ export default function ProductPage() {
     const [prorate,setProrate] = useState();
     const [desc,setDesc] = useState();
     const [maker,setMaker] = useState();
-    const [category,setCategory] = useState();
     const [imgurl,setImgurl] = useState();
-    const [category2,setCategory2] = useState();
     
     useEffect(()=>{
         axios.get("http://localhost:3001/getParticular/"+id)
@@ -25,8 +23,6 @@ export default function ProductPage() {
           setProrate(e.data.prorate)  
           setDesc(e.data.desc)    
           setMaker(e.data.maker)
-          setCategory(e.data.category)
-          setCategory2(e.data.category2)
           setImgurl(e.data.imgurl)
         })
         .catch(err=>console.log(err))
