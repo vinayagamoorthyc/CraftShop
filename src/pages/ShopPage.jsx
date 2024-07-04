@@ -58,7 +58,7 @@ export default function ShopPage() {
             </div>
             <div className='r_pro_flex' style={{marginBottom:"50px"}}>
             {filteredProducts?.map(e=>(
-                <RCard imgurl={e.imgurl} proname={e.proname} prorate={e.prorate} _id={e._id}/>
+                <RCard imgurl={e.imgurl} proname={e.proname} prorate={e.prorate} id={e._id}/>
                 ))}
             </div>
         </div>

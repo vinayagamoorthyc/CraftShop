@@ -11,8 +11,8 @@ export default function RCard(props) {
   }
 
   return (
-    <div className='rcard' >
-        <div onClick={()=>navigate('/productpage')}>
+    <div className='rcard' onClick={()=>navigate(`/productpage/${props.id}`)}>
+        <div>
             <img src={props.imgurl} alt=""/>
         </div>
         <div className='rcard_content'>
@@ -22,8 +22,8 @@ export default function RCard(props) {
             border:"1.5px solid #00000012",padding:"7px 20px 7px 20px",borderRadius:"7px",fontSize:"13.5px",color:"gray",width:"90%"
             }}>
             ADD TO CART</button>
-          <div onClick={()=>navigate('/productpage')}>{props.proname}</div>
-        <div onClick={()=>navigate('/productpage')} style={{color:"orange"}}>₹ {props.prorate}.00</div>
+          <div >{props.proname}</div>
+        <div style={{color:"orange"}}>₹ {props.prorate}.00</div>
         </div>
     </div>
   )

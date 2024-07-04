@@ -2,8 +2,8 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import {NextUIProvider} from "@nextui-org/react";
-import Login from './Authenticate/Login';
-import SignUp from './Authenticate/SignUp';
+import Login from './Authentication/Login';
+import SignUp from './Authentication/SignUp';
 import ShopPage from './pages/ShopPage';
 import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
@@ -26,7 +26,7 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<SignUp/>} />
         <Route path='/shoppage' element={<ShopPage/>} />
-        <Route path='/productpage' element={<ProductPage/>} />
+        <Route path='/productpage/:id' element={<ProductPage/>} />
         <Route path='/aboutpage' element={<AboutPage/>} />
         <Route path='/profilepage' element={<MyProfile/>} />
         <Route path='/likepage' element={<LikePage/>} />
