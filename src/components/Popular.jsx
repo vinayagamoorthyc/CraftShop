@@ -23,10 +23,10 @@ export default function Popular() {
                 </div>
             </div>
             <div className='p_pros_flex'>
-                <PCard img={garden} name={"01. Garden"} items={"12 item"}/>
-                <PCard img={kitchen} name={"02. Kitchen"} items={"18 item"}/>
-                <PCard img={candlees} name={"03. Candles"} items={"15 item"}/>
-                <PCard img={homewares} name={"04. Homewares"} items={"21 item"}/>
+                <PCard img={garden} name={"01. Garden"} items={"8 item"}/>
+                <PCard img={kitchen} name={"02. Kitchen"} items={"8 item"}/>
+                <PCard img={candlees} name={"03. Candles"} items={"8 item"}/>
+                <PCard img={homewares} name={"04. Homewares"} items={"9 item"}/>
             </div>
         </div>
         <div id='subscribe'></div>
