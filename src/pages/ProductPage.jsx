@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar.jsx';
 import { Tab, Tabs } from '@nextui-org/react';
 import Footer from '../components/Footer.jsx';
 import { useParams } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 
 export default function ProductPage() {
     const {id} = useParams();
