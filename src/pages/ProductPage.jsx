@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ProductPage.css';
 import NavBar from '../components/NavBar.jsx';
-import img from '../assets/preview.png';
 import { Tab, Tabs } from '@nextui-org/react';
 import Footer from '../components/Footer.jsx';
 import { useParams } from 'react-router-dom';
