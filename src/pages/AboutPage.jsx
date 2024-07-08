@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import './AboutPage.css';
+import React, { useEffect } from 'react'
+import './AboutPage.css'
 import NavBar from '../components/NavBar';
 import img from '../assets/aboutpage.jpg';
 import img2 from '../assets/aboutpage2.jpeg';
