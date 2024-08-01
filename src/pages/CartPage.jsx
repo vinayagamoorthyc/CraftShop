@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import CCard from '../cards/CCard.jsx';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer.jsx';
