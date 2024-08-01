@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './SignUp.css';
 import img from '../assets/signup.jpeg';
 import logo from "../assets/logo.png";
 import axios from 'axios';
