@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import img from "../assets/preview.png";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
