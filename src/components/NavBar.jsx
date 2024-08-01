@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button, Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownItem, Modal, useDisclosure, ModalContent, ModalFooter, ModalBody, ModalHeader} from "@nextui-org/react";
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
 import profile from '../assets/profile.jpg';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
